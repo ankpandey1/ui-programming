@@ -7,22 +7,6 @@ $(document).ready(function ()
     }
 });
 
-// $(document).ready(function ($)
-// {
-
-//     if (window.history && window.history.pushState)
-//     {
-
-//         window.history.pushState('forward', null, './#forward');
-
-//         $(window).on('popstate', function ()
-//         {
-//             alert('Back button was pressed.');
-//         });
-
-//     }
-// });
-
 function loginUser()
 {
     var gotUser = false;
@@ -99,7 +83,6 @@ function hideDiv(id)
     // console.log("drinkInfo", id);
 
     var x = document.getElementById("drink" + id);
-
 
     if (x.style.display === "none")
     {
