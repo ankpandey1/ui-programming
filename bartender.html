@@ -11,6 +11,7 @@
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="loader.js"></script>
     <script type="text/javascript" src="tables.js"></script>
+    <script type="text/javascript" src="test.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -23,11 +24,11 @@
         </div>
 
         <div id="alert">
-            <button class="alertbutton" align="left"><span>Alert</span></button>
+            <button class="alertbutton" align="left" onclick="alarm();"><span>Alert</span></button>
         </div>
 
         <div id="logout">
-            <button class="logoutbutton" align="right"><span>Log out</span></button>
+            <button class="logoutbutton" align="right" onclick="logoutUser();"><span>Log out</span></button>
         </div>
         
 
@@ -159,9 +160,11 @@
             <div id="line"></div>
 
             <div id=leftbox>
+                <br>
                 Waiting for orders
             </div>
             <div id=rightbox>
+                <br>
                 Waiting to pay
             </div>
         </div>
