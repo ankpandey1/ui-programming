@@ -1,4 +1,4 @@
-var Bevs = {
+var Products = {
     "beer": [
         {
             "nr": "1004703",
@@ -24,7 +24,9 @@ var Bevs = {
             "module": "T5",
             "assortment": "TSE",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1101003",
@@ -50,7 +52,9 @@ var Bevs = {
             "module": "",
             "assortment": "TSS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1101203",
@@ -76,7 +80,9 @@ var Bevs = {
             "module": "",
             "assortment": "TSS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1104303",
@@ -102,7 +108,9 @@ var Bevs = {
             "module": "",
             "assortment": "TSE",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1104712",
@@ -128,7 +136,9 @@ var Bevs = {
             "module": "",
             "assortment": "TSE",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         }
     ],
     "wine": [
@@ -156,7 +166,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1128201",
@@ -182,7 +194,9 @@ var Bevs = {
             "module": "",
             "assortment": "BS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1200001",
@@ -208,7 +222,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1200002",
@@ -234,7 +250,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1200201",
@@ -260,7 +278,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         }
     ],
     "cocktail": [
@@ -288,7 +308,9 @@ var Bevs = {
             "module": "",
             "assortment": "TSS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1184503",
@@ -314,7 +336,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "170102",
@@ -340,7 +364,9 @@ var Bevs = {
             "module": "",
             "assortment": "BS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "170702",
@@ -366,7 +392,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "171601",
@@ -392,7 +420,9 @@ var Bevs = {
             "module": "",
             "assortment": "FSN",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         }
     ],
     "dishes": [
@@ -420,7 +450,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1001",
@@ -446,7 +478,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1001201",
@@ -472,7 +506,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1001202",
@@ -498,7 +534,9 @@ var Bevs = {
             "module": "",
             "assortment": "FS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         },
         {
             "nr": "1003802",
@@ -524,7 +562,9 @@ var Bevs = {
             "module": "",
             "assortment": "TSS",
             "organic": "0",
-            "kosher": "0"
+            "kosher": "0",
+            "available": "true",
+            "curprice": "0"
         }
     ]
 }

@@ -11,6 +11,7 @@ function displayDatabase()
 {
     //the json data that will contain all the information of specfic beverage categories.
     var DB_MenuItems = { "beer": [], "wine": [], "cocktail": [], "dishes": [] };
+
     //total number of beverages to store per category
     var numOfItemsPerType = 5;
 
@@ -18,6 +19,10 @@ function displayDatabase()
     {
         //get the category of the beverage from the old database file that Lars created.
         var category = DB2.spirits[i].catgegory;
+
+        //add 2 more attributes: the availibility and the price for the day
+        DB2.spirits[i]["available"] = "true";
+        DB2.spirits[i]["curprice"] = "0";
 
         /* Make sure the length of each key array in the json variable does not exceed 'numOfItemsPerType'*/
 
@@ -35,7 +40,7 @@ function displayDatabase()
     }
 
     //boring html stuff
-    var jsonData = document.createTextNode("var Bevs = " + JSON.stringify(DB_MenuItems, null, 2));
+    var jsonData = document.createTextNode("var Products = " + JSON.stringify(DB_MenuItems, null, 2));
     var textArea = document.createElement("TEXTAREA");
     textArea.id = "textArea";
     textArea.setAttribute("readOnly", true);

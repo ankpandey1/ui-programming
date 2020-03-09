@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Database Base Document</title>
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript" src="Beverages.js"></script>
+    <script type="text/javascript" src="DBLoaded.js"></script>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript" src="tables.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="topbox">
+        <div id="pubtitle">
+            <h1 class="titletext">Breaking the waves</h1>
+        </div>
+
+        <div id="line"></div>
+
+        <!-- <div id=leftbox>
+            Waiting for orders
+        </div>
+        <div id=rightbox>
+            Waiting to pay
+        </div> -->
+    </div>
+    <div id="box"></div>
+
+    <div id="alert">
+        <button class="alertbutton" align="left"><span>Alert</span></button>
+    </div>
+
+    <div id="logout">
+        <button class="logoutbutton" align="right"><span>Log out</span></button>
+    </div>
+
+
+    <br>
+
+    <div id="mainmenu">
+
+        <div id="menuchoice">
+            <button class="menubutton" align="center" id="tablebutton"><span>Tables</span></button>
+            <br>
+            <br>
+            <br>
+            <button class="menubutton" align="center" id="productbutton"><span>Products</span></button>
+        </div>
+
+        <div id="tables">
+            <button class="backbutton" align="center" id="tablesback"><span>&laquo;Back</span></button>
+            <br>
+            <br>
+            <br>
+            <button class="menubutton" align="center" id="table1"><span>Table 1</span></button>
+            <br>
+            <br>
+            <br>
+            <button class="menubutton" align="center" id="table2"><span>Table 2</span></button>
+            <br>
+            <br>
+            <br>
+            <button class="menubutton" align="center" id="table3"><span>Table 3</span></button>
+            <br>
+            <br>
+            <br>
+            <button class="menubutton" align="center" id="table4"><span>Table 4</span></button>
+        </div>
+
+        <div id="productlist" style="align-self: start;">
+            <h1 style="text-align: left; color: white;"><u>Welcome to the Bartender/Waiter page</u></h1>
+
+        </div>
+
+        <div id="orderlist">
+            <button class="backbutton" align="left" id="orderlistback"><span>&laquo;Back</span></button>
+        </div>
+        <div id="orderlist1">
+            <br>
+            <h3>
+                Table 1:
+            </h3>
+            <ul>
+                <li>
+                    Corona
+                </li>
+                <li>
+                    Pinot noir
+                </li>
+            </ul>
+            <br>
+            <div>
+                sum: 59,00 SEK
+            </div>
+        </div>
+
+        <div id="orderlist2">
+            <br>
+            <h3>
+                Table 2:
+            </h3>
+            <ul>
+                <li>
+                    Burger
+                </li>
+                <li>
+                    Leffe
+                </li>
+            </ul>
+            <br>
+            <div>
+                sum: 109,00 SEK
+            </div>
+        </div>
+
+        <div id="orderlist3">
+            <br>
+            <h3>
+                Table 3:
+            </h3>
+            <ul>
+                <li>
+                    Carlsberg
+                </li>
+                <li>
+                    Laphroaig
+                </li>
+                <li>
+                    Monte blanc
+                </li>
+            </ul>
+            <br>
+            <div>
+                sum: 137,00 SEK
+            </div>
+        </div>
+
+        <div id="orderlist4">
+            <br>
+            <h3>
+                Table 4:
+            </h3>
+            <ul>
+                <li>
+                    Pasta
+                </li>
+                <li>
+                    Pizza
+                </li>
+                <li>
+                    Sauvignon
+                </li>
+                <li>
+                    Carlsberg
+                </li>
+            </ul>
+            <br>
+            <div>
+                sum: 209,00 SEK
+            </div>
+        </div>
+
+    </div>
+
+    <div id="bottompage">
+        <!-- <div id="line"></div>
+
+        <div id=leftbox>
+            Waiting for orders
+        </div>
+        <div id=rightbox>
+            Waiting to pay
+        </div> -->
+    </div>
+
+    <!---
+
+The html-file is just for loading the javascript files. If you go to the console under the "Inspect" of the popup menu,
+then you can enter javascript calls, to test the functions.
+
+-->
+
+</body>
+
+</html>
