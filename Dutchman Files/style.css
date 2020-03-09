@@ -1,17 +1,82 @@
-.logoutbutton{
-    position:absolute;
-    top:0;
-    right:10px;
-    color: blue;
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 6vw;
+    }
+}
+
+@font-face {
+	font-family: title1;
+	src: url('fonts/wave1.ttf');
+}
+
+@font-face {
+	font-family: title2;
+	src: url('fonts/wave2.ttf');
+}
+
+@font-face {
+	font-family: title3;
+	src: url('fonts/wave3.ttf');
+}
+
+@font-face {
+	font-family: sweet;
+	src: url('fonts/nice.ttf');
+}
+
+body {
+    display: flex;
+    background-color: #ffffff;
+}
+
+.backbutton {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  text-align: center;
+  transition-duration: 0.3s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 20px;
+  background-image: linear-gradient(to bottom right, rgb(26, 14, 10), rgb(104, 84, 75));
+  color: #ffffff;
+}
+
+.menubutton {
+    position: relative;
+    /*background-color: rgb(214, 214, 214);*/
+    /*border: 1px solid #000000;*/
+    background-image: linear-gradient(to bottom right, rgb(26, 14, 10), rgb(104, 84, 75));
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.3s;
     text-decoration: none;
- }
-
- .drinkInfo{
-     display: inline-flex;
-     margin-top: inherit;
-     justify-content: space-between;
- }
-
- /* div { display:block; }
-ul { display:inline-block; }
-button { display:inline-block; vertical-align:top; } */
+    overflow: hidden;
+    cursor: pointer;
+    /*border: 2px ridge #000000;*/
+    border: 1px solid rgb(214, 212, 212);
+}
+  
+  .menubutton:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .menubutton:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }

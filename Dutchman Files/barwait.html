@@ -9,23 +9,51 @@
 
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 
-    <script type="text/javascript" src="Beverages_eng.js"></script>
+    <script type="text/javascript" src="Database.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="loader.js"></script>
     <script type="text/javascript" src="test.js"></script>
 
 </head>
 
-<body class="barwaitpage">
-    <h1><u>Welcome to the Bartender/Waiter page</u></h1>
-    <a href=" index.html" class="logoutbutton">Log Out</a>
-    <div id="available products">
-        <h3><u>These are the available products:</u></h3>
-        <ol id="orderedList">
-            <div id="drinkList">
-            </div>
-        </ol>
+<body class="barwaitpage" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+
+
+    <div id="menuchoice">
+        <button class="menubutton" id="tablebutton"><span>Tables</span></button>
+        <br>
+        <br>
+        <button class="menubutton" id="productbutton"><span>Products</span></button>
     </div>
+
+    <div id="productspage">
+        <button class="backbutton" id="tablesback"><span>&laquo;Back</span></button>
+
+        <h1><u>Welcome to the Bartender/Waiter page</u></h1>
+        <h3><u>Products on the menu:</u></h3>
+
+        <div id="productlist">
+            <div id="Beers">
+                <h4><u>Beers:</u></h2>
+                    <ol id="beerlist"></ol>
+            </div>
+            <div id="Wines">
+                <h4><u>Wines:</u></h2>
+                    <ol id="winelist"></ol>
+            </div>
+            <div id="Cocktails">
+                <h4><u>Cocktails:</u></h2>
+                    <ol id="cocktaillist"></ol>
+            </div>
+            <div id="Dishes">
+                <h4><u>Dishes:</u></h2>
+                    <ol id="dishlist"></ol>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 
 </html>

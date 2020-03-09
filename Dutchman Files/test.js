@@ -1,97 +1,109 @@
-// jQuery
-$(document).ready(function ()
+var productsShown = false;
+
+$(function ()
 {
-    if ($('body').is('.barwaitpage'))
+    // Show main menu from the start. Hide all tables
+    //
+    $("#menuchoice").show();
+    $("#productspage").hide();
+    // displayProducts();
+
+    $("#productbutton").click(function ()
     {
-        displayDrinks();
-    }
+        $("#menuchoice").hide("slow");
+        $("#productspage").show("slow");
+        if (!productsShown) displayProducts();
+    });
+
+    $("#tablesback").click(function ()
+    {
+        $("#menuchoice").show("slow");
+        $("#productspage").hide("slow");
+    });
 });
 
-function loginUser()
+function displayProducts()
 {
-    var gotUser = false;
+    var DB = Products;
 
-    for (i = 0; i < DB.users.length; i++)
+    // console.log(DB);
+    var buttonCount = 0;
+
+    for (i = 0; i < Object.keys(DB).length; i++)
     {
-        if ((document.getElementById("username").value == DB.users[i].username ||
-            document.getElementById("username").value == DB.users[i].email) &&
-            document.getElementById("password").value == DB.users[i].password)
+        var type = Object.keys(DB)[i];
+        // console.log(DB[type].length);
+
+        for (j = 0; j < DB[type].length; j++)
         {
-            gotUser = true;
-            break;
+            var newDiv = document.createElement("div");
+            var list = document.createElement("li");
+            var drinkName = document.createTextNode(DB[type][j].name);
+            var button = document.createElement("button");
+            button.id = buttonCount++;
+            button.innerHTML = "Show More";
+            button.setAttribute('onclick', "hideDiv(this.id)")
+            button.setAttribute('style', 'position:absolute; left:250px; border-bottom:groove');
+            newDiv.setAttribute('style', 'width:500px');
+            newDiv.setAttribute('style', 'margin-bottom:10px');
+
+            var drinkInfoDiv = document.createElement("div");
+            drinkInfoDiv.id = "drink" + button.id;
+            drinkInfoDiv.style = "display:none;border-style:solid;";
+
+            var jsonDataPretty = document.createElement("pre");
+
+            var allDrinkInfo = document.createTextNode(JSON.stringify(DB[type][j], null, 2));
+            var priceLabel = document.createElement("label");
+            priceLabel.innerHTML = "Price: ";
+
+            var priceBox = document.createElement("input");
+            priceBox.setAttribute('type', "number");
+            priceBox.setAttribute('value', DB[type][j].priceinclvat);
+
+            var changeDataButton = document.createElement("button");
+            changeDataButton.innerHTML = "Save Changes";
+            changeDataButton.setAttribute('style', 'border-bottom:groove');
+
+
+            list.appendChild(drinkName);
+            list.appendChild(button);
+            newDiv.appendChild(list);
+            newDiv.appendChild(drinkInfoDiv);
+            jsonDataPretty.appendChild(allDrinkInfo);
+            drinkInfoDiv.appendChild(jsonDataPretty);
+            drinkInfoDiv.appendChild(priceLabel);
+            drinkInfoDiv.appendChild(priceBox);
+            drinkInfoDiv.appendChild(changeDataButton);
+            newDiv.appendChild(drinkInfoDiv);
+
+            if (type == "beer") document.getElementById("beerlist").appendChild(newDiv);
+            else if (type == "wine") document.getElementById("winelist").appendChild(newDiv);
+            else if (type == "cocktail") document.getElementById("cocktaillist").appendChild(newDiv);
+            else if (type == "dishes") document.getElementById("dishlist").appendChild(newDiv);
         }
     }
 
-    if (gotUser)
-    {
-        window.location.replace("barwait.html");
-    }
-    else alert("User not found");
-}
+    // console.log(Object.keys(DB));
 
-function displayDrinks()
-{
-    for (i = 0; i < 100; i++)
-    {
-        var newDiv = document.createElement("div");
-        var list = document.createElement("li");
-        var drinkName = document.createTextNode(DB2.spirits[i].name);
-        var button = document.createElement("button");
-        button.innerHTML = "Show More";
-        button.id = i;
-        button.setAttribute('onclick', "hideDiv(this.id)")
 
-        var drinkInfoDiv = document.createElement("div");
-        drinkInfoDiv.id = "drink" + i;
-        drinkInfoDiv.style = "display:none";
+    // console.log(DB);
 
-        var jsonDataPretty = document.createElement("pre");
-
-        var allDrinkInfo = document.createTextNode(JSON.stringify(DB2.spirits[i], null, 2));
-        var priceLabel = document.createElement("label");
-        priceLabel.innerHTML = "Price: ";
-
-        var priceBox = document.createElement("input");
-        priceBox.setAttribute('type', "number");
-        priceBox.setAttribute('value', DB2.spirits[i].priceinclvat);
-
-        var drinkAvailabilityText = document.createTextNode("Is Available");
-
-        var checkBox = document.createElement("input");
-        checkBox.setAttribute('type', "checkbox");
-
-        var changeDataButton = document.createElement("button");
-        changeDataButton.innerHTML = "Save Changes";
-
-        list.appendChild(drinkName);
-        list.appendChild(button);
-        newDiv.appendChild(list);
-        jsonDataPretty.appendChild(allDrinkInfo);
-        drinkInfoDiv.appendChild(jsonDataPretty);
-        drinkInfoDiv.appendChild(priceLabel);
-        drinkInfoDiv.appendChild(priceBox);
-        drinkInfoDiv.appendChild(drinkAvailabilityText);
-        drinkInfoDiv.appendChild(checkBox);
-        drinkInfoDiv.appendChild(changeDataButton);
-        newDiv.appendChild(drinkInfoDiv);
-        document.getElementById("drinkList").appendChild(newDiv);
-    }
+    productsShown = true;
 }
 
 function hideDiv(id)
 {
-    // console.log("drinkInfo", id);
-
     var x = document.getElementById("drink" + id);
 
     if (x.style.display === "none")
     {
-        x.style.display = "block";
+        $("#drink" + id).show("slow");
         document.getElementById(id).innerHTML = "Show Less"
     }
     else
     {
-        x.style.display = "none";
+        $("#drink" + id).hide("slow");
         document.getElementById(id).innerHTML = "Show More"
     }
 }
