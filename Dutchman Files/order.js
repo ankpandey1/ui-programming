@@ -42,9 +42,7 @@ function getAllProducts(){
 
 function getProductByType(type){
     var results=[];
-    console.log(type);
-    console.log(Object.keys(Products));
-    console.log(type in Products);
+   
     if(type=='all'){
         results=getAllProducts();
     }
@@ -56,7 +54,7 @@ function getProductByType(type){
             results.push(productItem);
         }
     }
-    console.log(results);
+
     return results;
 }
 
@@ -82,7 +80,7 @@ function listProductByType(){
     }
     //add the script for controlling the number input (add and subtract) for each item
     $('.itemContainer').ready(function() {
-		console.log('hello');
+        console.log('hello');
         $('.minus').click(function() {
             var $input = $(this).parent().find('input');
             var count = parseInt($input.val()) - 1;

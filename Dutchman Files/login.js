@@ -1,7 +1,7 @@
-function setCookie(username,hours){
+function setCookie(cname, value, hours){
     var d = new Date();
     d.setTime(d.getTime() + (hours*60*60*1000));                
-    document.cookie='username='+username+';Expires='+d.toUTCString()+';';
+    document.cookie=cname+'='+value+';Expires='+d.toUTCString()+';';
 }
 
 
@@ -40,10 +40,11 @@ function login(){
         credits=user[6];
         if(userPassword==password){
             alert('User ' + username + ' logins successfully!!!');
-            $('body').load('base.html',function(responseTxt,statusTxt,xhr){
+            $('body').load('mainmenu.html',function(responseTxt,statusTxt,xhr){
                 if(statusTxt=="success"){
                     $('#greeting').prepend('<h1>Hej, '+username+'</h1><h1>Credits: '+credits+' sek</h1>');
-                    setCookie(username,2);
+                    setCookie('username',username,2);
+                    setCookie('session','mainmenu.html',2);
                 }
                   
                 if(statusTxt=="error")
@@ -61,30 +62,31 @@ function login(){
     }
 }
 
-function loginCheck(){
-    if(getCookie('username')!='' && getCookie('username')!='guest'){
-        username=getCookie('username');
-        user=userDetails(username);
-        credits=user[6];
-        $('body').load('base.html',function(responseTxt,statusTxt,xhr){
-            if(statusTxt=="success"){
-                $('#greeting').prepend('<h1>Hej, '+username+'</h1><h1>Credits: '+credits+' sek</h1>');
-                setCookie(username,2);
-            }
+function viewControl(){
+    if(getCookie('username')!=''){
+        session=getCookie('session');
+        if(session=='mainmenu.html'){
+            username=getCookie('username');
+            $('body').load(session,function(responseTxt,statusTxt,xhr){
+                if(statusTxt=="success"){
+                    if(username!='guest'){
+                        user=userDetails(username);
+                        credits=user[6];
+                        $('#greeting').prepend('<h1>Hej, '+username+'</h1><h1>Credits: '+credits+' sek</h1>');
+                    
+                    } else{
+                        $('#greeting').prepend('<h1>Hej, guest</h1>');
+                    }
+                    setCookie('username',username,2);     
+                } if(statusTxt=="error")
+                    alert("Error: "+xhr.status+": "+xhr.statusText);
+            });
+        } else if(session=='order.html'){
+            $('body').load(session);
+        }
+        
               
-            if(statusTxt=="error")
-              alert("Error: "+xhr.status+": "+xhr.statusText);
-          });
-    } else if(getCookie('username')=='guest'){
-        $('body').load('base.html',function(responseTxt,statusTxt,xhr){
-            if(statusTxt=="success"){
-                setCookie(guest,2);
-                $('#greeting').prepend('<h1>Hej, guest</h1>');
-            }
-              
-            if(statusTxt=="error")
-              alert("Error: "+xhr.status+": "+xhr.statusText);
-          });
+            
     } else
     {
         $('body').load('loginForm.html');
@@ -92,9 +94,10 @@ function loginCheck(){
 }
 
 function proceedWithoutLogin(){
-    $('body').load('base.html',function(responseTxt,statusTxt,xhr){
+    setCookie('session','mainmenu.html',2);
+    $('body').load('mainmenu.html',function(responseTxt,statusTxt,xhr){
         if(statusTxt=="success"){
-            setCookie('guest',2);
+            setCookie('username','guest',2);
             $('#greeting').prepend('<h1>Hej, guest</h1>');
         }
           
@@ -105,5 +108,6 @@ function proceedWithoutLogin(){
 
 function logout(){
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     $('body').load('loginForm.html');
 }
