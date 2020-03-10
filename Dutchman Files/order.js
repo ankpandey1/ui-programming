@@ -80,7 +80,7 @@ function listProductByType(){
     }
     //add the script for controlling the number input (add and subtract) for each item
     $('.itemContainer').ready(function() {
-        console.log('hello');
+
         $('.minus').click(function() {
             var $input = $(this).parent().find('input');
             var count = parseInt($input.val()) - 1;
