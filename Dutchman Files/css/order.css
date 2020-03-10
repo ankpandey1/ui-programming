@@ -1,0 +1,74 @@
+.itemContainer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.item {
+    margin: 15px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 160px;
+}
+
+.aName, 
+.aPrice {
+    text-align: center;
+}
+
+.aName {
+    height: 40px;
+}
+
+img {
+    border: 5px solid #ddd;
+    -webkit-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
+}
+
+img:hover {
+    -webkit-box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+span {
+    cursor: pointer;
+}
+
+.number {
+    width: fit-content;
+}
+
+.minus,
+.plus {
+    width: 20px;
+    height: 20px;
+    background: #f2f2f2;
+    border-radius: 4px;
+    padding: 8px 5px 8px 5px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.quantity {
+    height: 34px;
+    width: 86px;
+    text-align: center;
+    font-size: 26px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
