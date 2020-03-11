@@ -62,6 +62,10 @@ function login(){
     }
 }
 
+/*
+display the corresponding page based on the last session stored in the cookie, 
+which means the user can continue on the page he closed last time
+*/
 function viewControl(){
     if(getCookie('username')!=''){
         session=getCookie('session');

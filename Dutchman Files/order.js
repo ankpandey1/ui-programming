@@ -1,23 +1,4 @@
-function subtract(){
-    var $input = $(this).parent().find('input');
-    var count = parseInt($input.val()) - 1;
-    count = count < 1 ? 1 : count;
-    $input.val(count);
-    $input.change();
-    return false;
-}
-
-function add(){
-    var $input = $(this).parent().find('input');
-    var count = parseInt($input.val()) + 1;
-    count = count > 10 ? 10 : count;        
-    $input.val(count);
-    $input.change();
-    return false;
-}
-
-
-
+//get all products from the new database
 function getAllProducts(){
     var productItem={};
     var results=[];
@@ -40,6 +21,7 @@ function getAllProducts(){
     return results;
 }
 
+//get specified products by the type, if the type is 'all' then get all products
 function getProductByType(type){
     var results=[];
    
@@ -58,7 +40,7 @@ function getProductByType(type){
     return results;
 }
 
-
+//list the results using flexboxes
 function listProductByType(){
     $('.itemContainer').empty();
     
