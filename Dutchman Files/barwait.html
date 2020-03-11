@@ -9,16 +9,15 @@
 
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
 
+
     <script type="text/javascript" src="Database.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="loader.js"></script>
-    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="main.js"></script>
 
 </head>
 
 <body class="barwaitpage" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-
-
 
     <div id="menuchoice">
         <button class="menubutton" id="tablebutton"><span>Tables</span></button>
@@ -27,13 +26,13 @@
         <button class="menubutton" id="productbutton"><span>Products</span></button>
     </div>
 
-    <div id="productspage">
+    <div id="productspage" style="width: 100%;">
         <button class="backbutton" id="tablesback"><span>&laquo;Back</span></button>
 
         <h1><u>Welcome to the Bartender/Waiter page</u></h1>
         <h3><u>Products on the menu:</u></h3>
 
-        <div id="productlist">
+        <div id="productlist" style="float: left;">
             <div id="Beers">
                 <h4><u>Beers:</u></h2>
                     <ol id="beerlist"></ol>
@@ -50,6 +49,11 @@
                 <h4><u>Dishes:</u></h2>
                     <ol id="dishlist"></ol>
             </div>
+        </div>
+
+        <div id="unavailableproducts"
+            style="float: right; margin-right: 10px; width: 500px; height: 500px; border:solid;">
+            <h2>Drag shit on here</h2>
         </div>
 
     </div>

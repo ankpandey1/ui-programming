@@ -10,13 +10,14 @@
     <script type="text/javascript" src="Beverages_eng.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="loader.js"></script>
-    <script type="text/javascript" src="test.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
 
-    <form action="/" method="GET">
+    <!-- <form action="/" method="GET">
         <div>
             <input id="username" name="username" type="text" required placeholder="User Name/Email">
         </div>
@@ -24,8 +25,64 @@
             <input id="password" name="password" type="password" required placeholder="Password">
         </div>
         <button type="button" onclick="loginUser();">Login</button>
-    </form>
+    </form> -->
+    <div class="empty">
+        <div class="fill" draggable="true">
+        </div>
+    </div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+
+    <div id="productlist" style="float: left;">
+        <div id="Beers">
+            <h4><u>Beers:</u></h2>
+                <ol id="beerlist">
+                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                        <li>
+                            "Nils Oscar"
+                            <button id="0" style="position: absolute; left: 250px; border-bottom: groove;">Show
+                                More</button>
+                        </li>
+                    </div>
+                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                        <li>
+                            "Flying Dog"
+                            <button id="1" style="position: absolute; left: 250px; border-bottom: groove;">Show
+                                More</button>
+                        </li>
+                    </div>
+                </ol>
+        </div>
+        <div id="Wines">
+            <h4><u>Wines:</u></h2>
+                <ol id="winelist">
+                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                        <li>
+                            "Mandorla"
+                            <button id="0" style="position: absolute; left: 250px; border-bottom: groove;">Show
+                                More</button>
+                        </li>
+                    </div>
+                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                        <li>
+                            "Vicar's choice"
+                            <button id="1" style="position: absolute; left: 250px; border-bottom: groove;">Show
+                                More</button>
+                        </li>
+                    </div>
+                </ol>
+        </div>
+
+        <h2>Drag shit on here</h2>
+        <div class="unavailable">
+        </div>
+
+    </div>
 
 </body>
+
+<script type="text/javascript" src="test.js"></script>
 
 </html>
