@@ -9,8 +9,7 @@ Obviously the colours and other more aesthetic properties of this bar layout sti
 challenge to make this display aesthetically pleasing. The best suggestion wins a price.
 */
 body {
-    background-color: lightgoldenrodyellow;
-	background-image: url(images/background.jpg);"
+	background-image: url(images/background.jpg);"  
 }
 
 /*
@@ -19,7 +18,13 @@ We use a nice informal typeset for the pub ordering menu.
 div {
     font-family: "Chalkboard SE";
 }
-
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  }
 .button {
   background-color: #4CAF50;
   border: none;
@@ -49,6 +54,29 @@ div {
   top: 90%;
   left: 50%;
   position: absolute;
+}
+
+.language { position: absolute; top: 5px; right: 5px; padding: 20px; }
+.english { display: inline; }
+.swedish { display: none; }
+
+.leftside,.rightside{
+	height: 100hv;
+	width: 100%;
+}
+.rightside{
+	background-image: none;
+    background-color: white; /* Line color */
+    height: 800px; /* Override in-line if you want specific height. */
+    border-right: 6px solid green;
+}
+
+.leftside{
+  border-right: 6px solid green;
+  right: 100%;
+  height: 800px;
+  width: 100%;
+	
 }
 
 /*
@@ -81,4 +109,11 @@ Definition of a standard button of the interface.
 #startingpagecssbuttons li .button:hover {
 	color: #000000 ;
 	background-color: #c0c0c0 ;
+}
+#startingpagecssbuttons.centred {
+	  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }

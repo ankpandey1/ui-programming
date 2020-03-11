@@ -11,19 +11,28 @@ everything is made with HTML and CSS + javaScript for the functionality.
 Required Library: jQuery (latest version).
 
 This example does not implement externalised strings!
-
+	
 -->
 <head>
     <meta charset="UTF-8">
 
     <title>The Flying Dutchman</title>
-
-    <script type="text/javascript" src="guest-view.js"></script>
     <link rel="stylesheet" type="text/css" href="Bar.css">
+	<script src="jquery-1.11.1.js"></script>
+	<script language="JavaScript" type="text/javascript" src="LanguagePicker.js"></script>
+    <script type="text/javascript" src="guest-view.js"></script>
 
 </head>
 <body>
 
+
+<div class="language">
+Language: 
+<select id="select">
+     <option id="english" value="english">English</option>
+    <option id="swedish" value="swedish">Swedish</option>
+</select>
+</div>
 
 <!-- The name of the pub. -->
 <div id="pubname">
@@ -31,9 +40,10 @@ This example does not implement externalised strings!
 </div>
 
 
-<div id="startingpagecssbuttons">
+<div id="startingpagecssbuttons" class="centred">
 	<ul>
-		<li><button class="button button 1" onclick="orderPlace()">Place Order</button></li>
+		<li class="english"><button class="button button 1" onclick="orderPlace()">Place Order</button></li>
+		<li class="swedish"><button class="button button 1" onclick="orderPlace()">uasdio</button></li>
 		<li><button class="button button 2" onclick="orderHistory()">Order History</button></li>
 		<li><button class="button button 3" onclick="pay()">Pay</button></li>
 	</ul>
