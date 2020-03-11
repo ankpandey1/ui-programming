@@ -22,7 +22,7 @@ function displayDatabase()
 
         //add 2 more attributes: the availibility and the price for the day
         DB2.spirits[i]["available"] = "true";
-        DB2.spirits[i]["curprice"] = "0";
+        DB2.spirits[i]["curprice"] = DB2.spirits[i]["priceinclvat"];
 
         /* Make sure the length of each key array in the json variable does not exceed 'numOfItemsPerType'*/
 
