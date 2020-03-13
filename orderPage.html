@@ -15,10 +15,23 @@ This example does not implement externalised strings!
 -->
 <head>
     <meta charset="UTF-8">
-
+	<script src="jquery-1.11.1.js"></script>
     <script type="text/javascript" src="guest-view.js"></script>
+	<script type="text/javascript" src="Beverages.js"></script>
+    <script type="text/javascript" src="DBLoaded.js"></script>
+    <script type="text/javascript" src="loader.js"></script>
+    <script type="text/javascript" src="login.js"></script>
+    <script type="text/javascript" src="guest-view.js"></script>
+    <script type="text/javascript" src="order.js"></script>
+    <script type="text/javascript" src="Database.js"></script>
+    <script type="text/javascript" src="DragnDrop.js"></script>
+	<script>
+	$(document).ready(listProductByType());
+	</script>
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Bar.css">
+    <link rel="stylesheet" type="text/css" href="order.css">
 
 </head>
 <body>
@@ -26,15 +39,42 @@ This example does not implement externalised strings!
 <div class="row no-gutters">
 
 	<div id="order-div" class="col-sm-9 no-gutters">
-		<div class="leftside">
-		<ul>
-			<li><a href="placing">Menu</a></li>
-		</ul>
+		<div>
+					<select name="type" onchange="javascript:listProductByType()">
+				<option value="all">All</option>
+				<option value="beer">Beer</option>
+    　			<option value='wine'>Wine</option>
+    　			<option value="cocktail">Cocktail</option>
+    　			<option value="dishes">Dishes</option>
+			</select>
 		</div>
+		<div class="leftside">
+			<div class="itemContainer">
+			</div>
+		</div>
+
 	</div>
 	<div class="col-sm-3 no-gutters">
 	<div id="order-cart" class="rightside">
-		asdasd
+
+		<section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div id="cartItems" class="cart-items"  ondrop="drop(event)" ondragover="allowDrop(event)" style=" width: 350px; height: auto; padding: 10px;border: 1px solid #aaaaaa;">
+			
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">SEK </span>
+                <span class="cart-total-price-value"></span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button" onclick="placeOrder()">PURCHASE</button>
+        </section>
+
 	</div>
 	</div>
 
