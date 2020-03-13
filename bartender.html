@@ -12,6 +12,9 @@
     <script type="text/javascript" src="loader.js"></script>
     <script type="text/javascript" src="tables.js"></script>
     <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="order.js"></script>
+    <script type="text/javascript" src="display.js"></script>
+    <script type="text/javascript" src="Database.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -72,86 +75,107 @@
                     <h3>
                         Table 1:
                     </h3>
-                    <ul>
+                    <ul id="orders1">
                         <li>
-                            Corona
-                        </li>
-                        <li>
-                            Pinot noir
                         </li>
                     </ul>
                     <br>
-                    <div>
-                        sum: 59,00 SEK
+                    <div id="sum1">
+                        <!--TODO: list t1 sum to pay-->
                     </div>
+                <button class="menubutton" align="center" id="newordert1"><span>Make new order</span></button>
                 </div>
+                
+                <div id="table1order">
+                    <!--
+                    <form>
+                        <p>Beer</p>
+                        <input type="beernumber" id="beernumber" value="0" />
+                        <div class="value-button" id="decrease" onclick="decreaseValue('beernumber')" value="Decrease Value">-</div>
+                        <div class="value-button" id="increase" onclick="increaseValue('beernumber')" value="Increase Value">+</div>
+                    </form>
+                    <form>
+                        <p>Wine</p>
+                        <input type="winenumber" id="winenumber" value="0" />
+                        <div class="value-button" id="decrease" onclick="decreaseValue('winenumber')" value="Decrease Value">-</div>
+                        <div class="value-button" id="increase" onclick="increaseValue('winenumber')" value="Increase Value">+</div>
+                    -->   
+                        <div id="productlist" style="overflow-y:scroll; overflow-x:hidden; height:400px;">
 
+                            <div id="Beers">
+                                <h4><u>Beers:</u></h2>
+                                    <ul id="beerlist"></ul>
+                            </div>
+                            <div id="Wines">
+                                <h4><u>Wines:</u></h2>
+                                    <ul id="winelist"></ul>
+                            </div>
+                            <div id="Cocktails">
+                                <h4><u>Cocktails:</u></h2>
+                                    <ul id="cocktaillist"></ul>
+                            </div>
+                            <div id="Dishes">
+                                <h4><u>Dishes:</u></h2>
+                                    <ul id="dishlist"></ul>
+                            </div>
+
+                        </div>
+                    <button class="menubutton" id="submit1"><span>Submit order</span></button>
+                </div>
+                
+                
                 <div id="orderlist2">
                     <br>
                     <h3>
                         Table 2:
                     </h3>
                     <ul>
-                        <li>
-                            Burger
-                        </li>
-                        <li>
-                            Leffe
-                        </li>
+                        <!--TODO: list t2 orders-->
                     </ul>
                     <br>
                     <div>
-                        sum: 109,00 SEK
+                        <!--TODO: list t2 sum to pay-->
                     </div>
+                <button class="menubutton" align="center" id="newordert2"><span>Make new order</span></button>
                 </div>
+                <div id="table2order">
 
+                </div>
                 <div id="orderlist3">
                     <br>
                     <h3>
                         Table 3:
                     </h3>
                     <ul>
-                        <li>
-                            Carlsberg
-                        </li>
-                        <li>
-                            Laphroaig
-                        </li>
-                        <li>
-                            Monte blanc
-                        </li>
+                        <!--TODO: list t3 orders-->
                     </ul>
                     <br>
                     <div>
-                        sum: 137,00 SEK
+                        <!--TODO: list t3 sum to pay-->
                     </div>
+                <button class="menubutton" align="center" id="newordert3"><span>Make new order</span></button>
                 </div>
+                <div id="table3order">
 
+                </div>
                 <div id="orderlist4">
                     <br>
                     <h3>
                         Table 4:
                     </h3>
                     <ul>
-                        <li>
-                            Pasta
-                        </li>
-                        <li>
-                            Pizza
-                        </li>
-                        <li>
-                            Sauvignon
-                        </li>
-                        <li>
-                            Carlsberg
-                        </li>
+                        <!--TODO: list t4 orders-->
                     </ul>
                     <br>
                     <div>
-                        sum: 209,00 SEK
+                        <!--TODO: list t4 sum to pay-->
                     </div>
+                <button class="menubutton" align="center" id="newordert4"><span>Make new order</span></button>
                 </div>
+                <div id="table4order">
 
+                </div>
+                
             
 
         </div>
