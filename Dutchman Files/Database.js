@@ -26,7 +26,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "43.70"
         },
         {
             "nr": "1101003",
@@ -54,7 +54,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "20.90"
         },
         {
             "nr": "1101203",
@@ -82,7 +82,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "27.30"
         },
         {
             "nr": "1104303",
@@ -110,7 +110,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "39.90"
         },
         {
             "nr": "1104712",
@@ -138,7 +138,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "54.90"
         }
     ],
     "wine": [
@@ -168,7 +168,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "69.00"
         },
         {
             "nr": "1128201",
@@ -196,7 +196,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "59.00"
         },
         {
             "nr": "1200001",
@@ -224,7 +224,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "89.00"
         },
         {
             "nr": "1200002",
@@ -252,7 +252,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "49.00"
         },
         {
             "nr": "1200201",
@@ -280,7 +280,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "125.00"
         }
     ],
     "cocktail": [
@@ -310,7 +310,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "17.90"
         },
         {
             "nr": "1184503",
@@ -338,7 +338,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "15.90"
         },
         {
             "nr": "170102",
@@ -366,7 +366,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "18.90"
         },
         {
             "nr": "170702",
@@ -394,7 +394,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "19.90"
         },
         {
             "nr": "171601",
@@ -422,7 +422,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "24.90"
         }
     ],
     "dishes": [
@@ -452,7 +452,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "442.00"
         },
         {
             "nr": "1001",
@@ -480,7 +480,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "195.00"
         },
         {
             "nr": "1001201",
@@ -508,7 +508,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "190.00"
         },
         {
             "nr": "1001202",
@@ -536,7 +536,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "100.00"
         },
         {
             "nr": "1003802",
@@ -564,7 +564,7 @@ var Products = {
             "organic": "0",
             "kosher": "0",
             "available": "true",
-            "curprice": "0"
+            "curprice": "195.00"
         }
     ]
 }

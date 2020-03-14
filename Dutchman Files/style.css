@@ -25,9 +25,10 @@
 }
 
 body {
-    /* display: flex;
-    background-color: #ffffff; */
+    /* display: flex; */
+    /* background-color: #ffffff; */
     background: white;
+    /* background: darksalmon; */
 }
 
 .backbutton {
@@ -61,7 +62,7 @@ body {
     /*border: 2px ridge #000000;*/
     border: 1px solid rgb(214, 212, 212);
 }
-  
+
   .menubutton:after {
     content: "";
     background: #f1f1f1;
@@ -74,14 +75,14 @@ body {
     opacity: 0;
     transition: all 0.8s
   }
-  
+
   .menubutton:active:after {
     padding: 0;
     margin: 0;
     opacity: 1;
     transition: 0s
   }
-  
+
   .fill{
     background-image: url('http://source.unsplash.com/random/150x150');
     position: relative;
@@ -102,14 +103,14 @@ body {
   }
 
   .unavailable{
-    float: right; 
-    margin-right: 10px; 
-    width: 500px; height: 500px; 
+    float: right;
+    margin-right: 10px;
+    width: 500px; height: 400px;
     border:solid;
   }
 
   .hold{
-    border: solid lightgray 4px;
+    border: solid gray 4px;
   }
 
   .hovered{
@@ -121,7 +122,7 @@ body {
     display: none;
   }
 
-  .dragablediv
+  .dragable
   {
     cursor: pointer;
   }

@@ -26,59 +26,62 @@
         </div>
         <button type="button" onclick="loginUser();">Login</button>
     </form> -->
-    <div class="empty">
+    <!-- <div class="empty">
         <div class="fill" draggable="true">
         </div>
     </div>
     <div class="empty"></div>
     <div class="empty"></div>
     <div class="empty"></div>
-    <div class="empty"></div>
+    <div class="empty"></div> -->
 
-    <div id="productlist" style="float: left;">
+    <div id="productlist">
         <div id="Beers">
             <h4><u>Beers:</u></h2>
                 <ol id="beerlist">
-                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                    <div id="beer0" class="dragable" style="margin-bottom: 10px;" draggable="true">
                         <li>
-                            "Nils Oscar"
-                            <button id="0" style="position: absolute; left: 250px; border-bottom: groove;">Show
-                                More</button>
+                            Nils Oscar
+                            <button id="0">Show More</button>
+                            <button class="rmvbtn" style="display: none;" onclick="removeItem(this)">Remove</button>
                         </li>
                     </div>
-                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                    <div id="beer1" class="dragable" style="margin-bottom: 10px;" draggable="true">
                         <li>
-                            "Flying Dog"
-                            <button id="1" style="position: absolute; left: 250px; border-bottom: groove;">Show
-                                More</button>
+                            Flying Dog
+                            <button id="1">Show More</button>
+                            <button class="rmvbtn" style="display: none;" onclick="removeItem(this)">Remove</button>
                         </li>
                     </div>
                 </ol>
         </div>
-        <div id="Wines">
+        <!-- <div id="Wines">
             <h4><u>Wines:</u></h2>
                 <ol id="winelist">
-                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                    <div class="dragable" style="margin-bottom: 10px;" draggable="true">
                         <li>
-                            "Mandorla"
-                            <button id="0" style="position: absolute; left: 250px; border-bottom: groove;">Show
+                            Mandorla
+                            <button id="0">Show
                                 More</button>
                         </li>
                     </div>
-                    <div class="dragablediv" style="margin-bottom: 10px;" draggable="true">
+                    <div class="dragable" style="margin-bottom: 10px;" draggable="true">
                         <li>
-                            "Vicar's choice"
-                            <button id="1" style="position: absolute; left: 250px; border-bottom: groove;">Show
+                            Vicar's choice
+                            <button id="1">Show
                                 More</button>
                         </li>
                     </div>
                 </ol>
-        </div>
+        </div> -->
 
+    </div>
+
+    <div>
         <h2>Drag shit on here</h2>
-        <div class="unavailable">
-        </div>
+        <ol class="unavailable" id="unlist">
 
+        </ol>
     </div>
 
 </body>
