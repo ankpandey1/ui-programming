@@ -27,7 +27,7 @@ function displayDatabase()
         /* Make sure the length of each key array in the json variable does not exceed 'numOfItemsPerType'*/
 
         //if the beverage is of category 'Ale' add it to the 'beer' key in the json variable
-        if (DB_MenuItems.beer.length < numOfItemsPerType && category.includes("Ale")) DB_MenuItems.beer[DB_MenuItems.beer.length] = DB2.spirits[i];
+        if (DB_MenuItems.beer.length < numOfItemsPerType && category.includes("Ale")) DB_MenuItems.beer[DB_MenuItems.beer.length] = DB2.spirits[i]; // Beer = öl in swedish
 
         //if the beverage is of category 'Vin' add it to the 'wine' key in the json variable
         else if (DB_MenuItems.wine.length < numOfItemsPerType && category.includes("vin")) DB_MenuItems.wine[DB_MenuItems.wine.length] = DB2.spirits[i];

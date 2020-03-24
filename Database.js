@@ -568,3 +568,45 @@ var Products = {
         }
     ]
 }
+
+var Tables = {
+    "table1": [
+    {
+        "orders": ["test","test2"],
+        "sum": 0
+    }
+],
+    "table2": [
+    {
+        "orders": [],
+        "sum": 0
+    }
+],
+    "table3": [
+    {
+        "orders": [],
+        "sum": 0
+    }
+],
+    "table4": [
+    {
+        "orders": [],
+        "sum": 0
+    }
+]
+}
+
+var testJSON = {
+    "tables" : 
+        [
+          {"table#": "1","sum":"20", "orders":["Beer", "More beer", "Whiskey"]},
+          {"table#": "2", "sum":"120", "orders":["test"]},
+          {"table#": "3", "sum":"240", "orders":["t1","t2"]},
+          {"table#": "4", "sum":"320", "orders":[]}
+        ]
+}
+
+var testDB = '{"tables":[' +
+'{"order":"John","sum":"0" },' +
+'{"order":"Anna","sum":"100" },' +
+'{"order":"Peter","sum":200 }]}';

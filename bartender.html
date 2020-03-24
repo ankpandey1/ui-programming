@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Database Base Document</title>
     <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-
+    <script type="text/javascript" src="Database.js"></script>
     <script type="text/javascript" src="Beverages.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="loader.js"></script>
@@ -14,7 +14,6 @@
     <script type="text/javascript" src="test.js"></script>
     <script type="text/javascript" src="order.js"></script>
     <script type="text/javascript" src="display.js"></script>
-    <script type="text/javascript" src="Database.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -76,8 +75,7 @@
                         Table 1:
                     </h3>
                     <ul id="orders1">
-                        <li>
-                        </li>
+                        <!-- TODO: list orders for t1-->
                     </ul>
                     <br>
                     <div id="sum1">
@@ -120,7 +118,7 @@
                             </div>
 
                         </div>
-                    <button class="menubutton" id="submit1"><span>Submit order</span></button>
+                    <button class="menubutton" id="submit1" onclick="submitOrder();"><span>Submit order</span></button>
                 </div>
                 
                 

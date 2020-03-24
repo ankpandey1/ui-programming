@@ -4,9 +4,12 @@ var productsShown3 = false;
 var productsShown4 = false;
 
 var currentTable = 0;
+var TB = Tables;
+var JS = testJSON;
 
 $(function () {
     $("#newordert1").click(function () {
+        // TODO: set values to zero
         if (!productsShown1)
         {
             displayProducts();  
@@ -37,6 +40,40 @@ $(function () {
         }
         currentTable = 4;
         productsShown4 = true;
+    });
+
+// table1 = onclick 
+// orders1 = id, where all products are shown
+// sum1 = id, where sum is shown
+    $("#table1").click(function () {
+        //obj = JSON.parse(JS)
+        //document.getElementById("sum1").innerHTML = obj.tables[1].sum;
+        //item = JSON.parse(JS)
+        var item = Object.keys(JS)
+        //var test = item.tables[0].sum
+        console.log(item)
+        //console.log(test)
+        //console.log(test)
+        
+        //var drinkName = document.createTextNode(DB[type][j].name);
+        for (j = 0; j < JS[item][0].orders.length; j++) {
+            var newOrder = document.createElement("div");
+            var list = document.createElement("li");
+            var order= document.createTextNode(JS[item][0].orders[j]);
+            
+            console.log(order);
+            list.appendChild(order);
+            newOrder.appendChild(list);
+            document.getElementById("orders1").appendChild(newOrder);
+            //document.getElementById("sum1").appendChild(list)
+            
+        }
+
+        var sum = document.createTextNode(JS[item][0].sum);
+        document.getElementById("sum1").appendChild(sum);
+        
+        //document.getElementById("orders1").innerHTML = item.Tables[0].orders
+        //document.getElementById("sum1").innerHTML = item.Tables[0].sum
     });
 
     /*
