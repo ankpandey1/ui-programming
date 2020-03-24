@@ -5,39 +5,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Bartender/Waiter Login</title>
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-
-    <script type="text/javascript" src="Beverages_eng.js"></script>
-    <script type="text/javascript" src="DBLoaded.js"></script>
-    <script type="text/javascript" src="loader.js"></script>
-
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="DBLoaded.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
 </head>
 
 <body>
 
-    <!-- <form action="/" method="GET">
-        <div>
-            <input id="username" name="username" type="text" required placeholder="User Name/Email">
+    <div class="login-page">
+        <div class="form">
+            <input type="text" placeholder="User Name" id="usernamefield" required>
+            <input type="password" placeholder="Password" id="passwordfield" required>
+            <button
+                onclick="onLoginButtonClick(document.getElementById('usernamefield').value, document.getElementById('passwordfield').value);">Login</button>
         </div>
-        <div>
-            <input id="password" name="password" type="password" required placeholder="Password">
-        </div>
-        <button type="button" onclick="loginUser();">Login</button>
-    </form> -->
-
-    <p>
-        The paragraph tag defines a paragraph. Using this tag places a blank line above and below the text of the
-        paragraph.
-        These automated blank lines are examples of how a tag "marks" a paragraph and the web browser automatically
-        understands how to display the paragraph text because of the paragraph tag.
-    </p>
-
-
+    </div>
 
 </body>
-
-<script type="text/javascript" src="test.js"></script>
 
 </html>
