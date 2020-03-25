@@ -37,5 +37,4 @@ function getUser(username, password)
     }
 
     return false;
-
 }

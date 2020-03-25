@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Manager Page</title>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="Database.js"></script>
+    <script type="text/javascript" src="manager.js"></script>
+
+
+</head>
+
+<body class="managerpage" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    <h1><u>Welcome to the Manager page</u></h1>
+
+    <select id="dropdown" onchange="populateInputFields(options[selectedIndex].value)">
+
+    </select>
+    <br>
+    <br>
+    <br>
+
+    <div class="form">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">NR</label>
+        <input type="text" class="input" readonly>
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ARTICLE ID</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ARTICLE TYPE</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">NAME</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">NAME2</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRICE INCLUDING
+            VAT</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">VOLUME ML</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRICE PER
+            LITRE</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">INTRODUCED</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">FINAL
+            DELIVERY</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CATERGORY</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PACKAGING</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CAP TYPE</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COUNTRY OF
+            ORIGIN</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COUNTRY OF ORIGIN
+            LAND NAME</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRODUCER</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PROVIDER</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRODUCTION
+            YEAR</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">TESTED PRODUCTION
+            YEAR</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ALCOHOL
+            STRENGTH</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">MODULE</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ASSORTMENT</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ORGANIC</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">KOSHER</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">AVAILABLE</label>
+        <input type="text" class="input">
+        <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CURRENT PRICE</label>
+        <input type="text" class="input">
+        <button onclick="changeData();">Save Changes</button>
+    </div>
+
+</body>
+
+</html>
