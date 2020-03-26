@@ -85,6 +85,7 @@ $(function () {
 function editOrder(item,tablenr) {
     var itemid = parseInt(document.getElementById(item).id) + 100;
     deleteOrder(itemid,tablenr)
+    gotoOrderpage(tablenr)
 
 }
 
@@ -232,3 +233,19 @@ function removefromSum(item,tablenr) {
     
 }
 
+function gotoOrderpage(tablenr) {
+    $("#tables").hide("slow");
+    $("#menuchoice").hide("slow");
+    $("#orderlist").hide("slow");
+    $("#orderlist1").hide("slow");
+    $("#orderlist2").hide("slow");
+    $("#orderlist3").hide("slow");
+    $("#orderlist4").hide("slow");
+    $("#bottompage").hide("slow");
+    $("#table1order").hide("slow");
+    $("#table2order").hide("slow");
+    $("#table3order").hide("slow");
+    $("#table4order").hide("slow");
+    $("#table"+(tablenr+1)+"order").show("slow");
+    $("#tableorder").show("slow");
+}
