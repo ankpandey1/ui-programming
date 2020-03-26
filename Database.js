@@ -599,10 +599,10 @@ var Tables = {
 var testJSON = {
     "tables" : 
         [
-          {"table#": "1","sum":"20", "orders":["Beer", "More beer", "Whiskey"]},
-          {"table#": "2", "sum":"120", "orders":["test"]},
-          {"table#": "3", "sum":"240", "orders":["t1","t2"]},
-          {"table#": "4", "sum":"320", "orders":[]}
+          {"table#": "1","sum":"0", "orders":[]},
+          {"table#": "2", "sum":"0", "orders":[]},
+          {"table#": "3", "sum":"0", "orders":[]},
+          {"table#": "4", "sum":"0", "orders":[]}
         ]
 }
 
@@ -610,3 +610,14 @@ var testDB = '{"tables":[' +
 '{"order":"John","sum":"0" },' +
 '{"order":"Anna","sum":"100" },' +
 '{"order":"Peter","sum":200 }]}';
+
+var language = {
+    'english': [
+        {'Tablebutton' : 'Tables'},
+        {'Productbutton' : 'Products'}
+    ],
+    'swedish': [
+        {'Tablebutton' : 'Bord'},
+        {'Productbutton' : 'Produkter'} 
+    ]
+    }

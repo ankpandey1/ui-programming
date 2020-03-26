@@ -3,18 +3,20 @@
     function displayProducts()
 {
     var DB = Products;
+    var JS = testJSON;
 
     // console.log(DB);
     var addbuttonCount = 0;
     var decbuttonCount = 100;
     var inputid = 200;
+    var divstart = 500;
 
     for (i = 0; i < Object.keys(DB).length; i++)
     {
         var type = Object.keys(DB)[i];
         // console.log(DB[type].length);
 
-        for (j = 0; j < DB[type].length; j++,inputid++,addbuttonCount++,decbuttonCount++)
+        for (j = 0; j < DB[type].length; j++,inputid++,addbuttonCount++,decbuttonCount++,divstart++)
         {
             var newDiv = document.createElement("div");
             var list = document.createElement("li");
@@ -26,6 +28,7 @@
             addbutton.id = addbuttonCount;
             decbutton.id = decbuttonCount;
             input.id = inputid;
+            list.id = divstart;
             
             addbutton.onclick = function() {
 
@@ -40,35 +43,10 @@
             decbutton.innerHTML = "-";
             input.value = 0;
 
-            //input.value = 0;
+            
             input.setAttribute('style', 'width: 20px;')
 
-            /*
-            button.setAttribute('style', 'position:relative; left: 10px; border-bottom:groove');       
-            button.setAttribute('style', 'position:absolute; left:250px; border-bottom:groove');
-            newDiv.setAttribute('style', 'width:500px');
-            newDiv.setAttribute('style', 'margin-bottom:10px');
-            */
-
-            /*
-            var drinkInfoDiv = document.createElement("div");
-            drinkInfoDiv.id = "drink" + button.id;
-            drinkInfoDiv.style = "display:none;border-style:solid;";
-
-            var jsonDataPretty = document.createElement("pre");
-
-            var allDrinkInfo = document.createTextNode(JSON.stringify(DB[type][j], null, 2));
-            var priceLabel = document.createElement("label");
-            priceLabel.innerHTML = "Price: ";
-
-            var priceBox = document.createElement("input");
-            priceBox.setAttribute('type', "number");
-            priceBox.setAttribute('value', DB[type][j].priceinclvat);
-
-            var changeDataButton = document.createElement("button");
-            changeDataButton.innerHTML = "Save Changes";
-            changeDataButton.setAttribute('style', 'border-bottom:groove');
-            */
+            
 
             list.appendChild(input);
             list.appendChild(addbutton);
@@ -76,15 +54,7 @@
             list.appendChild(drinkName);
             
             newDiv.appendChild(list);
-            /*
-            newDiv.appendChild(drinkInfoDiv);
-            jsonDataPretty.appendChild(allDrinkInfo);
-            drinkInfoDiv.appendChild(jsonDataPretty);
-            drinkInfoDiv.appendChild(priceLabel);
-            drinkInfoDiv.appendChild(priceBox);
-            drinkInfoDiv.appendChild(changeDataButton);
-            newDiv.appendChild(drinkInfoDiv);
-            */
+            
 
             if (type == "beer") document.getElementById("beerlist").appendChild(newDiv);
             else if (type == "wine") document.getElementById("winelist").appendChild(newDiv);
@@ -93,11 +63,6 @@
 
         }
     }
-
-    // console.log(Object.keys(DB));
-
-
-    // console.log(DB);
 
     productsShown = true;
 }
@@ -120,27 +85,10 @@ function decreaseValue(numb) {
     document.getElementById(number).value = value;
     }
 
-function hideDiv(id)
-{
-    
-    var x = document.getElementById("drink" + id);
-
-    if (x.style.display === "none")
-    {
-        $("#drink" + id).show("slow");
-        document.getElementById(id).innerHTML = "Show Less"
-    }
-    else
-    {
-        $("#drink" + id).hide("slow");
-        document.getElementById(id).innerHTML = "Show More"
-    }
-    
-}
-
+/*
 $(function () {
 
-    var TDB = Tables;
+    var db = Object.keys(JS)
 
     $("#submit1").click(function () {
         for (j = 200; j < 220; j++)
@@ -149,10 +97,22 @@ $(function () {
         console.log(val)
         if (val > 0)
         {
-            // Add product to database
+            var itemid = j + 300;
+            var text = $("#"+(itemid)).contents().filter(function() {
+                return this.nodeType == Node.TEXT_NODE;
+              }).text();
+            for (i = val; i>0; i--) {
+                JS[db][0].orders.push(text)
+            }
         }
-
+        // Reset values in submitlist
+        document.getElementById(j).value = 0;
     }
+    displayOrder()
+
     });
 
 });
+*/
+// table1 = klick
+// orderlist1 = id där allt ska visas

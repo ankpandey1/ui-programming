@@ -15,6 +15,7 @@ $(function () {
     $("#table2order").hide();
     $("#table3order").hide();
     $("#table4order").hide();
+    $("#tableorder").hide();
 
 
     // Here we define the action when switching between menus. We add the activity as a click-function,
@@ -33,6 +34,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#table1").click(function () {
@@ -48,6 +50,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#table2").click(function () {
@@ -63,6 +66,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#table3").click(function () {
@@ -78,6 +82,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#table4").click(function () {
@@ -93,6 +98,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#orderlistback").click(function () {
@@ -108,6 +114,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#tablesback").click(function () {
@@ -123,6 +130,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
 
     $("#newordert1").click(function () {
@@ -138,6 +146,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").show("slow");
     });
 
     $("#newordert2").click(function () {
@@ -153,6 +162,7 @@ $(function () {
         $("#table2order").show("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").show("slow");
     });
 
     $("#newordert3").click(function () {
@@ -168,6 +178,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").show("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").show("slow");
     });
 
     $("#newordert4").click(function () {
@@ -183,6 +194,7 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").show("slow");
+        $("#tableorder").show("slow");
     });
     
     $("#submit1").click(function () {       
@@ -198,6 +210,55 @@ $(function () {
         $("#table2order").hide("slow");
         $("#table3order").hide("slow");
         $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
+    });
+
+    $("#submit2").click(function () {       
+        $("#tables").hide("slow");
+        $("#menuchoice").hide("slow");
+        $("#orderlist").show("slow");
+        $("#orderlist1").hide("slow");
+        $("#orderlist2").show("slow");
+        $("#orderlist3").hide("slow");
+        $("#orderlist4").hide("slow");
+        $("#bottompage").hide("slow");
+        $("#table1order").hide("slow");
+        $("#table2order").hide("slow");
+        $("#table3order").hide("slow");
+        $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
+    });
+
+    $("#submit3").click(function () {       
+        $("#tables").hide("slow");
+        $("#menuchoice").hide("slow");
+        $("#orderlist").show("slow");
+        $("#orderlist1").hide("slow");
+        $("#orderlist2").hide("slow");
+        $("#orderlist3").show("slow");
+        $("#orderlist4").hide("slow");
+        $("#bottompage").hide("slow");
+        $("#table1order").hide("slow");
+        $("#table2order").hide("slow");
+        $("#table3order").hide("slow");
+        $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
+    });
+
+    $("#submit4").click(function () {       
+        $("#tables").hide("slow");
+        $("#menuchoice").hide("slow");
+        $("#orderlist").show("slow");
+        $("#orderlist1").hide("slow");
+        $("#orderlist2").hide("slow");
+        $("#orderlist3").hide("slow");
+        $("#orderlist4").show("slow");
+        $("#bottompage").hide("slow");
+        $("#table1order").hide("slow");
+        $("#table2order").hide("slow");
+        $("#table3order").hide("slow");
+        $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
     });
     
 });
