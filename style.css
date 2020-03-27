@@ -136,12 +136,12 @@ body {
 .backbutton {
     text-decoration: none;
     display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
     padding: 8px 16px;
     text-align: center;
     transition-duration: 0.3s;
     text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
     font-size: 20px;
     background-image: linear-gradient(to bottom right, rgb(26, 14, 10), rgb(104, 84, 75));
     color: #ffffff;
@@ -153,11 +153,11 @@ body {
 	background-color:#9c8a23;
 	border-radius:6px;
 	border:1px solid #000000;
-	display:inline-block;
-	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
-	font-size:15px;
+    font-size:15px;
+    display:inline-block;
+	cursor:pointer;
 	font-weight:bold;
 	padding:6px 24px;
 	text-decoration:none;
@@ -200,62 +200,117 @@ body {
     border: 1px solid rgb(214, 212, 212);
 }
   
-  .menubutton:after {
-    content: "";
-    background: #f1f1f1;
-    display: block;
+.menubutton:after {
+content: "";
+background: #f1f1f1;
+display: block;
+position: absolute;
+padding-top: 300%;
+padding-left: 350%;
+margin-left: -20px !important;
+margin-top: -120%;
+opacity: 0;
+transition: all 0.8s
+}
+
+.menubutton:active:after {
+padding: 0;
+margin: 0;
+opacity: 1;
+transition: 0s
+}
+
+/* drag and drop design */
+
+#dragboxtitle {
     position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
-  
-  .menubutton:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
+    margin-left: -770px;
+    margin-top: -10px;
+}
+
+.unavailable{
+float: right;
+position: absolute;
+margin-left: -780px;
+height: 400px;
+width: 500px;
+border:solid;
+overflow-y: scroll;
+}
+
+.hold{
+border: solid gray 4px;
+}
+
+.hovered{
+background: #f4f4f4;
+border-style: dashed;
+}
+
+.invisible{
+display: none;
+}
+
+.dragable
+{
+cursor: pointer;
+}
+
+.login-page
+  {
+    width: 360px;
+    padding: 10% 0 0;
+    margin: auto;
   }
 
+#managerview {
+    position: absolute;
+    margin-top: -50px;
+    margin-left: -85px;
+}
 
-  .value-button {
-    display: inline-block;
-    border: 1px solid #ddd;
-    margin: 0px;
-    width: 40px;
-    height: 20px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 11px 0;
-    background: #eee;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+.form
+{
+background: rgba(20, 8, 0, 0.8);
+max-width: 360px;
+margin: 0 auto 100px;
+padding: 45px;
+float: left;
+}
 
-  .value-button:hover {
-    cursor: pointer;
-    opacity: 0.9;
-  }
+.form input{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+outline: 1;
+background: #f2f2f2;
+width: 100%;
+border: 0;
+margin: 0 0 15px;
+padding: 15px;
+box-sizing: border-box;
+font-size: 14px;
+}
 
-  input#number {
-    text-align: center;
-    border: none;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    margin: 0px;
-    width: 40px;
-    height: 40px;
-  }
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-  }
+.form button{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-transform: uppercase;
+outline: 0;
+background: #4CAF50;
+width: 100%;
+border: 0;
+padding: 15px;
+color: #FFFFFF;
+font-size: 14px;
+cursor: pointer;
+}
+
+#dropdown{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+outline: 1;
+background: #f2f2f2;
+width: 360px;
+border: 10;
+margin: 0 0 15px;
+padding: 15px;
+box-sizing: border-box;
+font-size: 14px;
+}

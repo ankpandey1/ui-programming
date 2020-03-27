@@ -10,10 +10,15 @@
     <script type="text/javascript" src="Beverages.js"></script>
     <script type="text/javascript" src="DBLoaded.js"></script>
     <script type="text/javascript" src="loader.js"></script>
-    <script type="text/javascript" src="tables.js"></script>
+    <script type="text/javascript" src="navigation.js"></script>
     <script type="text/javascript" src="test.js"></script>
     <script type="text/javascript" src="order.js"></script>
     <script type="text/javascript" src="display.js"></script>
+    <script type="text/javascript" src="manager.js"></script>
+    <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <script type="text/javascript" src="view.js"></script>
+    
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -44,6 +49,117 @@
             <br>
             <br>
             <button class="menubutton" align="center" id="productbutton"><span>Products</span></button>
+            <br>
+            <br>
+            <br>
+            <button class="menubutton" align="center" id="managerbutton"><span>Manager view</span></button>
+            </div>
+
+            <div id="managerview">
+                <h1><u>Welcome to the Manager page</u></h1>
+
+            <select id="dropdown" onchange="populateInputFields(options[selectedIndex].value)">
+
+            </select>
+            <br>
+            <br>
+            <br>
+
+                <div class="form" style="float: left; overflow-y:scroll; overflow-x:hidden; height:400px;">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">NR</label>
+                    <input type="text" class="input" readonly>
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ARTICLE ID</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ARTICLE TYPE</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">NAME</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">NAME2</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRICE INCLUDING
+                        VAT</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">VOLUME ML</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRICE PER
+                        LITRE</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">INTRODUCED</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">FINAL
+                        DELIVERY</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CATERGORY</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PACKAGING</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CAP TYPE</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COUNTRY OF
+                        ORIGIN</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">COUNTRY OF ORIGIN
+                        LAND NAME</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRODUCER</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PROVIDER</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">PRODUCTION
+                        YEAR</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">TESTED PRODUCTION
+                        YEAR</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ALCOHOL
+                        STRENGTH</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">MODULE</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ASSORTMENT</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ORGANIC</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">KOSHER</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">AVAILABLE</label>
+                    <input type="text" class="input">
+                    <label style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CURRENT PRICE</label>
+                    <input type="text" class="input">
+                    <button onclick="changeData();">Save Changes</button>
+                </div>
+            </div>
+            
+            <div id="productsection">
+                <h3><u>Products on the menu:</u></h3>
+                <button class="backbutton" id="tablesback2"><span>&laquo;Back</span></button>
+
+                <div id="productlist2" style="float: left; overflow-y:scroll; overflow-x:hidden; height:400px;">
+                    <div id="Beersl">
+                        <h4><u>Beers:</u></h2>
+                            <ol id="beerlist2"></ol>
+                    </div>
+                    <div id="Winesl">
+                        <h4><u>Wines:</u></h2>
+                            <ol id="winelist2"></ol>
+                    </div>
+                    <div id="Cocktailsl">
+                        <h4><u>Cocktails:</u></h2>
+                            <ol id="cocktaillist2"></ol>
+                    </div>
+                    <div id="Dishesl">
+                        <h4><u>Dishes:</u></h2>
+                            <ol id="dishlist2"></ol>
+                    </div>
+                </div>
+
+                <div id="unavailablearea">
+                    <h2 id="dragboxtitle">Drag items here to make them unavailable</h2>
+                    <ol class="unavailable" id="unlist">
+            
+                    </ol>
+                </div>
+
             </div>
 
             <div id="tables">
@@ -96,7 +212,7 @@
                     <br>
                     <h4 style="color: black";> Sum to pay:</h4>
                     <div id="sum2" style="color: black";>
-                        <!--TODO: list t2 sum to pay-->
+                        
                     </div>
                     <h4 style="color: black";> SEK</h4>
                 <button class="menubutton" align="center" id="newordert2"><span>Make new order</span></button>
@@ -112,7 +228,7 @@
                     <br>
                     <h4 style="color: black";> Sum to pay:</h4>
                     <div id="sum3" style="color: black";>
-                        <!--TODO: list t3 sum to pay-->
+                        
                     </div>
                     <h4 style="color: black";> SEK</h4>
                 <button class="menubutton" align="center" id="newordert3"><span>Make new order</span></button>
@@ -128,7 +244,7 @@
                     <br>
                     <h4 style="color: black";> Sum to pay:</h4>
                     <div id="sum4" style="color: black";>
-                        <!--TODO: list t4 sum to pay-->
+                        
                     </div>
                     <h4 style="color: black";> SEK</h4>
                 <button class="menubutton" align="center" id="newordert4"><span>Make new order</span></button>
