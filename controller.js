@@ -1,6 +1,6 @@
 /*
 
-var productsShown = false;
+var productShown = false;
 
 $(function ()
 {

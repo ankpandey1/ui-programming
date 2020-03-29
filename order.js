@@ -10,6 +10,7 @@ var DB = Products;
 //var orderstart = 2000;
 
 $(function () {
+    //whenever new order is clicked it will display the available products
     $("#newordert1").click(function () {
         // TODO: set values to zero
         if (!productsShown)
@@ -44,7 +45,7 @@ $(function () {
         productsShown = true;
     });
 
-
+    // Whenever a numbered tablebutton is clicked it will display the current orders for said table.
     $("#table1").click(function () {       
         displayOrder(0)  
     });
@@ -61,7 +62,7 @@ $(function () {
         displayOrder(3)  
     });
 
-    
+    // Whenever a submit button is clicked it will make a new order for that table
     $("#submit1").click(function () {
         makenewOrder(0)
     });
@@ -82,6 +83,7 @@ $(function () {
 
 });
 
+// Function that deletes an order and then navigate to the product page.
 function editOrder(item,tablenr) {
     var itemid = parseInt(document.getElementById(item).id) + 100;
     deleteOrder(itemid,tablenr)
@@ -89,25 +91,47 @@ function editOrder(item,tablenr) {
 
 }
 
+// Based on current table nr and item it will delete that item from that tables orderlist
 function deleteOrder(item,tablenr) {
+    document.getElementById("undo"+(tablenr+1)).innerHTML = "";
     var itemid = parseInt(document.getElementById(item).id) + 900;
     console.log(itemid)
     var text = $("#"+(itemid)).contents().filter(function() {
         return this.nodeType == Node.TEXT_NODE;
       }).text();
-    console.log(text)  
+    
     var db = Object.keys(JS)
 
     for (j = 0; j < JS[db][tablenr].orders.length; j++) {
-        if (text == JS[db][tablenr].orders[j]) {            
-            JS[db][0].orders.splice(j, 1);       
+        if (text == JS[db][tablenr].orders[j]) {           
+            JS[db][tablenr].orders.splice(j, 1);       
         }       
     }
     removefromSum(text,tablenr)
+
+    var undobutton = document.createElement("button")
+    undobutton.innerHTML = "Undo deletion";
+    undobutton.onclick = function() {
+
+        undoDelete(tablenr,text);
+        };
+
+    document.getElementById("undo"+(tablenr+1)).appendChild(undobutton)
     displayOrder(tablenr)
-    
+
 }
 
+// When "Undo deletion" is clicked, it will add the last removed item and update the database accordingly
+function undoDelete(tablenr,item) {
+    var db = Object.keys(JS)
+    JS[db][tablenr].orders.push(item);
+    addtoSum(item,tablenr);
+    document.getElementById("undo"+(tablenr+1)).innerHTML = "";
+    displayOrder(tablenr)  
+}
+
+
+// Function that displays the current orders given a tablenumber
 function displayOrder(tablenr) {
 
     var editidstart = 1000;
@@ -160,6 +184,7 @@ function displayOrder(tablenr) {
     
 };
 
+// Function to make a new order and then call addtoSum to update the total cost for all orders of that table
 function makenewOrder(tablenr) {
 
     var db = Object.keys(JS)
@@ -186,6 +211,7 @@ function makenewOrder(tablenr) {
     
 }
 
+// Updates a table's total cost of orders by adding the price of the new item
 function addtoSum(item,tablenr) {
     
     var type = Object.keys(DB);
@@ -210,6 +236,7 @@ function addtoSum(item,tablenr) {
     
 }
 
+// Function to remove the cost of an item for a table's total sum of orders.
 function removefromSum(item,tablenr) {
     var type = Object.keys(DB);
     var db = Object.keys(JS)
@@ -233,6 +260,7 @@ function removefromSum(item,tablenr) {
     
 }
 
+// Function to directly navigate to the product/order page given a table number.
 function gotoOrderpage(tablenr) {
     $("#tables").hide("slow");
     $("#menuchoice").hide("slow");

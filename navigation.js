@@ -1,8 +1,11 @@
 var productShown = false;
 
+// Navigation for the whole bartender/manager view. 
+// This is based on click-functions
+
 $(function () {
 
-    // Show main menu from the start. Hide all tables
+    // Show main menu from the start.
     //
     $("#menuchoice").show();
     $("#bottompage").show();
@@ -22,8 +25,9 @@ $(function () {
     $("#managerview").hide();
 
     // Here we define the action when switching between menus. We add the activity as a click-function,
-    // which is connected to the respective "tabs". The actual switching is done by
+    // which is connected to the respective "tabs".
 
+    // Displaying the 4 tablebuttons on click.
     $("#tablebutton").click(function () {
         $("#tables").show("slow");
         $("#menuchoice").hide("slow");
@@ -42,7 +46,7 @@ $(function () {
         $("#productsection").hide("slow");
         $("#unavailablearea").hide("slow");
     });
-
+    // Displaying current orders for all 4 different tables
     $("#table1").click(function () {
         $("#tables").hide("slow");
         $("#menuchoice").hide("slow");
@@ -137,7 +141,7 @@ $(function () {
         $("#productsection").hide("slow");
         $("#unavailablearea").hide("slow");
     });
-
+    // returning to main menu
     $("#tablesback").click(function () {
         $("#tables").hide("slow");
         $("#menuchoice").show("slow");
@@ -156,7 +160,7 @@ $(function () {
         $("#productsection").hide("slow");
         $("#unavailablearea").hide("slow");
     });
-
+    // returning to main menu
     $("#tablesback2").click(function () {
         $("#tables").hide("slow");
         $("#menuchoice").show("slow");
@@ -175,7 +179,7 @@ $(function () {
         $("#productsection").hide("slow");
         $("#unavailablearea").hide("slow");
     });
-
+    // Making new order (displaying available products) for all tables
     $("#newordert1").click(function () {
         $("#tables").hide("slow");
         $("#menuchoice").hide("slow");
@@ -251,7 +255,7 @@ $(function () {
         $("#productsection").hide("slow");
         $("#unavailablearea").hide("slow");
     });
-    
+    // Submit buttons for all 4 tables
     $("#submit1").click(function () {       
         $("#tables").hide("slow");
         $("#menuchoice").hide("slow");
@@ -350,6 +354,8 @@ $(function () {
         //load the products and set up the products pafe only once
         if (!productShown) displayProductz(getDatabase());
     });
+
+    // Display manager view
     $("#managerbutton").click(function ()
     {   
         window.alert("Only proceed if you are the manager")
