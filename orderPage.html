@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<script type="text/javaScript" src="languages/en.js"></script>
+	<script type="text/javascript" src="languages/sv.js"></script>
+	<script src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="guestLoader.js"></script>
+    <script type="text/javascript" src="guestLogin.js"></script>
+    <script type="text/javascript" src="guestOrder.js"></script>
+    <script type="text/javascript" src="Database.js"></script>
+    <script type="text/javascript" src="DragnDrop.js"></script>
+    <script type="text/javascript" src="DisplayLastOrder.js"></script>
+	<script type="text/javascript" src="StoreOrderDetails.js"></script>
+	<script type="text/javascript" src="LanguagePicker.js"></script>	
+
+	
+	<script>
+	$(document).ready(listProductByType());
+	</script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/Bar.css">
+    <link rel="stylesheet" type="text/css" href="css/order.css">
+    <link rel="stylesheet" type="text/css" href="css/Modal.css">
+</head>
+<body>
+
+
+
+<div class="row no-gutters">
+	<div id="order-div" class="col-sm-9 no-gutters">
+		<div>
+			<div class="btn-group">
+			<<button id="order.page.review" type="review-order" onclick="openModal()"><script>translate("order.page.review")</script></button>
+			<button id="order.page.pay" type="pay" onclick="window.location.assign('paymentPage.html')"><script>translate("order.page.pay")</script></button>	
+			</div>
+			<div class="language">
+			Language: 
+			<select id="select"  onChange=changeLanguage(this.value)>
+	 
+			<option id="english" value="english">English</option>
+			<option id="swedish" value="swedish">Swedish</option>
+			</select>
+			</div>
+
+
+					<select name="type" onchange="javascript:listProductByType()">
+				<option id="order.page.drinks.all" value="all"><script>translate("order.page.drinks.all")</script></option>
+				<option id="order.page.drinks.beer" value="beer"><script>translate("order.page.drinks.beer")</script></option>
+    　			<option id="order.page.drinks.wine" value='wine'><script>translate("order.page.drinks.wine")</script></option>
+    　			<option id="order.page.drinks.cocktail" value="cocktail"><script>translate("order.page.drinks.cocktail")</script></option>
+    　			<option id="order.page.drinks.dishes" value="dishes"><script>translate("order.page.drinks.dishes")</script></option>
+			</select>
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+
+				<span class="closeModal">
+					<button id="closeModalButton" type="closeModal" onclick="closeModal()">X</button>
+				</span>
+			<!-- Modal content -->
+			<div class="modal-content" id="modalContent">
+			</div>
+
+			</div>
+	
+		</div>
+		<div class="leftside">
+			<div class="itemContainer">
+			</div>
+		</div>
+
+	</div>
+	<div class="col-sm-3 no-gutters">
+	<div id="order-cart" class="rightside">
+
+		<section class="container content-section">
+            <h2 id="order.page.cart.title" class="section-header"><script>translate("order.page.cart.title")</script></h2>
+            <div class="cart-row">
+                <span id="order.page.cart.item.label" class="cart-item cart-header cart-column"><script>translate("order.page.cart.item.label")</script></span>
+                <span id="order.page.cart.price.label" class="cart-price cart-header cart-column"><script>translate("order.page.cart.price.label")</script></span>
+                <span id="order.page.cart.quantity.label" class="cart-quantity cart-header cart-column"><script>translate("order.page.cart.quantity.label")</script></span>
+            </div>
+            <div id="cartItems" class="cart-items"  ondrop="drop(event)" ondragover="allowDrop(event)" style=" width: 350px; height: auto; padding: 10px;border: 1px solid #aaaaaa;">
+			
+            </div>
+            <div class="cart-total">
+                <strong id="order.page.cart.total.label" class="cart-total-title"><script>translate("order.page.cart.total.label")</script></strong>
+                <span class="cart-total-price">SEK </span>
+                <span class="cart-total-price-value"></span>
+            </div>
+            <button id="order.page.cart.place.order.label" class="btn btn-primary btn-purchase" type="button">"><script>translate("order.page.cart.place.order.label")</script></button>
+        </section>
+
+	</div>
+	</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>The Flying Dutchman</title>
+    <link rel="stylesheet" type="text/css" href="css/Bar.css">
+    <link rel="stylesheet" type="text/css" href="css/order.css">
+    <link rel="stylesheet" type="text/css" href="css/paymentPage.css">
+	<script src="jquery-3.3.1.min.js"></script>
+	<script type="text/javaScript" src="languages/en.js"></script>
+	<script type="text/javascript" src="languages/sv.js"></script>
+	<script language="JavaScript" type="text/javascript" src="LanguagePicker.js"></script>
+	<script type="text/javascript" src="RemoveRequiredFields.js"></script>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+</head>
+
+<body>
+
+
+<div class="row no-gutters">
+
+	<div id="order-div" class="col-sm-9 no-gutters"><div class="language">
+Language: 
+<select id="select"  onChange=changeLanguage(this.value)>
+	 
+    <option selected="selected" id="english" value="english">English</option>
+    <option id="swedish" value="swedish">Swedish</option>
+</select>
+</div>
+
+		<div>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form id="checkout-form">
+
+        <div class="row">
+          <div class="col-50">
+            <h3 id="payment.page.heading"><script>translate("payment.page.heading");</script></h3>
+			<input type="button" value="Back" onclick="window.history.back()" /> 
+
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label id="payment.page.card.name" for="cname"><script>translate("payment.page.card.name");</script></label>
+            <input type="text" id="cname1" name="cardname" required>
+            <label id="payment.page.card.number" for="ccnum"><script>translate("payment.page.card.number");</script></label>
+            <input type="text" id="ccnum1" name="cardnumber" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+            <label id="payment.page.card.expiry"for="expmonth"><script>translate("payment.page.card.expiry");</script></label>
+            <input type="text" id="expmonth1" name="expmonth" placeholder="September" required>
+
+            <div class="row">
+              <div class="col-50">
+                <label id="payment.page.card.expiry.year" for="expyear"><script>translate("payment.page.card.expiry.year");</script></label>
+                <input type="text" id="expyear1" name="expyear" placeholder="2018" required>
+              </div>
+              <div class="col-50">
+                <label id="payment.page.card.cvv" for="cvv"><script>translate("payment.page.card.cvv");</script></label>
+                <input type="text" id="cvv1" name="cvv" placeholder="XXX" required>
+              </div>
+            </div>
+          </div>
+
+        </div>
+		<input type="checkbox" id="payment.page.counter" onclick="removeFieldsAsRequired()">Pay At The Counter!!
+        <input type="submit" value="CHECKOUT" class="btn" onclick="clearEverything()">
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  	<div class="col-sm-3 no-gutters">
+	<div id="cart-cart" class="rightside">
+
+		<section class="container content-section">
+            <h2 id="payment.page.cart.header" class="section-header"><script>translate("payment.page.cart.header");</script></h2>
+            <div class="cart-row">
+                <span id="order.page.cart.item.label" class="cart-item cart-header cart-column"><script>translate("order.page.cart.item.label");</script></span>
+                <span id="order.page.cart.price.label" class="cart-price cart-header cart-column"><script>translate("order.page.cart.price.label");</script></span>
+                <span id="order.page.cart.quantity.label" class="cart-quantity cart-header cart-column"><script>translate("order.page.cart.quantity.label");</script></span>
+            </div>
+            <div id="paymentItems" class="cart-items" style=" width: 350px; height: auto; padding: 10px;border: 1px solid #aaaaaa;">
+			
+            </div>
+            <div class="cart-total">
+                <strong id="order.page.cart.total.label" class="cart-total-title"><script>translate("order.page.cart.total.label");</script></strong>
+                <span class="cart-total-price">SEK </span>
+                <span class="cart-total-price-value"></span>
+            </div>
+        </section>
+
+	</div>
+	</div>
+
+</div>
+<script>
+window.onload = function() {
+var order = window.localStorage.getItem("order");
+var orderObject = JSON.parse(order);
+var total = 0;
+
+//var cartRow = document.createElement('div')
+
+//cartRow.classList.add('cart-row')
+if(orderObject===null){
+	window.alert("Please place an order first!!");
+	
+}
+else{
+    var cartRow = document.createElement('div')
+	var cartItems = document.getElementsByClassName('cart-items')[0]
+  for(i=0;i<orderObject.length;i++){
+	 var cartRow = document.createElement('div')
+
+	cartRow.classList.add('cart-row')
+
+	var cartRowContents = '<div class="cart-item cart-column">\
+            <span class="cart-item-title">'+orderObject[i].name+'</span>\
+			</div>\
+			<span class="cart-price cart-column">'+orderObject[i].price+'</span>\
+			<div class="cart-quantity cart-column">'+orderObject[i].quantity + ' </div>'
+
+	cartRow.innerHTML = cartRowContents
+	cartItems.append(cartRow)
+	total = total + orderObject[i].price*orderObject[i].quantity;
+
+}
+}
+document.getElementsByClassName("cart-total-price-value")[0].innerText = total;
+};
+</script>
+</body>
+
+</html>

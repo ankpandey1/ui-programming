@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome!</title>
+    <link href="icons/ship.png" type="image/icon type" rel="icon">
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="guestLoader.js"></script>
+    <script type="text/javascript" src="guestLogin.js"></script>
+    <script type="text/javascript" src="guestOrder.js"></script>
+    <script type="text/javascript" src="Database.js"></script>
+    <script type="text/javascript" src="DBLoaded.js"></script>
+	<script type="text/javaScript" src="languages/en.js"></script>
+	<script type="text/javascript" src="languages/sv.js"></script>
+	<script language="JavaScript" type="text/javascript" src="LanguagePicker.js"></script>
+	
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="css/order.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="language">
+Language: 
+<select id="select"  onChange=changeLanguage(this.value)>
+	 
+    <option id="english" value="english">English</option>
+    <option id="swedish" value="swedish">Swedish</option>
+</select>
+</div>
+
+<div class="menubackground">
+        
+    <form action="javascript:login()" id="loginForm" method="POST">
+        <div class="container">
+            <marquee><h1 class="glow" style="color: #4CAF50; text-align: center;">Flying Dutchman Pub</h1></marquee>
+            <hr/>
+            <div class="inputcontainer">
+                <label for="username" style="color: #4CAF50;"><strong id="login.form.username"><script>translate("login.form.username")</script></strong></label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required><br><br>
+                <label for="password" style="color: #4CAF50;"><strong  id="login.form.password"><script>translate("login.form.password")</script></strong></label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required><br><br>
+            </div>
+
+            <button  id="login.form.vip.login.button" type="submit" onclick="validateLogin()"><script>translate("login.form.vip.login.button")</script></button>
+            <button  id="login.form.guest.login.button" type="button" onclick="proceedWithoutLogin()"><script>translate("login.form.guest.login.button")</script></button>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>
+

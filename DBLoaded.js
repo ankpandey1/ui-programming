@@ -1,16 +1,6 @@
 var DB = {
     "users": [
         {
-            "user_id": "1000",
-            "credentials": "0",
-            "password": "12345",
-            "username": "erkr",
-            "first_name": "Erik",
-            "last_name": "Krantz",
-            "email": "erik.krantz.4152@it.uu.se",
-            "phone": "0701234567"
-        },
-        {
             "user_id": "2",
             "credentials": "0",
             "password": "b690bc2447d40ea8a6f78345eb979a28",
