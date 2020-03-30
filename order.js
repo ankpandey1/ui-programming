@@ -1,7 +1,7 @@
 var productsShown = false;
 
 var currentTable = 0;
-var TB = Tables;
+//var TB = Tables;
 var JS = testJSON;
 var DB = Products;
 
@@ -95,7 +95,6 @@ function editOrder(item,tablenr) {
 function deleteOrder(item,tablenr) {
     document.getElementById("undo"+(tablenr+1)).innerHTML = "";
     var itemid = parseInt(document.getElementById(item).id) + 900;
-    console.log(itemid)
     var text = $("#"+(itemid)).contents().filter(function() {
         return this.nodeType == Node.TEXT_NODE;
       }).text();
@@ -214,8 +213,8 @@ function makenewOrder(tablenr) {
 // Updates a table's total cost of orders by adding the price of the new item
 function addtoSum(item,tablenr) {
     
-    var type = Object.keys(DB);
-    var db = Object.keys(JS)
+    var type = Object.keys(DB); // PRODUCTS
+    var db = Object.keys(JS) // TABLES
     
     
     for (x = 0; x < Object.keys(DB).length; x++)
@@ -227,9 +226,9 @@ function addtoSum(item,tablenr) {
                 // add price of added item to table sum
                 var cost = parseInt(DB[type][z].priceinclvat)
                 var currentsum = parseInt(JS[db][tablenr].sum)
-                console.log(cost)
+                
                 JS[db][tablenr].sum = cost + currentsum;
-                console.log(JS[db][tablenr].sum)
+                
             }
         }
     }

@@ -160,8 +160,27 @@ $(function () {
         $("#productsection").hide("slow");
         $("#unavailablearea").hide("slow");
     });
-    // returning to main menu
+    // returning to main menu from product page
     $("#tablesback2").click(function () {
+        $("#tables").hide("slow");
+        $("#menuchoice").show("slow");
+        $("#orderlist").hide("slow");
+        $("#orderlist1").hide("slow");
+        $("#orderlist2").hide("slow");
+        $("#orderlist3").hide("slow");
+        $("#orderlist4").hide("slow");
+        $("#bottompage").show("slow");
+        $("#table1order").hide("slow");
+        $("#table2order").hide("slow");
+        $("#table3order").hide("slow");
+        $("#table4order").hide("slow");
+        $("#tableorder").hide("slow");
+        $("#managerview").hide("slow");
+        $("#productsection").hide("slow");
+        $("#unavailablearea").hide("slow");
+    });
+    // returning to main menu from manager page
+    $("#tablesback3").click(function () {
         $("#tables").hide("slow");
         $("#menuchoice").show("slow");
         $("#orderlist").hide("slow");
@@ -358,23 +377,43 @@ $(function () {
     // Display manager view
     $("#managerbutton").click(function ()
     {   
-        window.alert("Only proceed if you are the manager")
-        $("#productsection").hide("slow");
-        $("#unavailablearea").hide("slow");
-        $("#tables").hide("slow");
-        $("#menuchoice").hide("slow");
-        $("#orderlist").hide("slow");
-        $("#orderlist1").hide("slow");
-        $("#orderlist2").hide("slow");
-        $("#orderlist3").hide("slow");
-        $("#orderlist4").hide("slow");
-        $("#bottompage").hide("slow");
-        $("#table1order").hide("slow");
-        $("#table2order").hide("slow");
-        $("#table3order").hide("slow");
-        $("#table4order").hide("slow");
-        $("#tableorder").hide("slow");
-        $("#managerview").show("slow");
+        var response = confirm("Only proceed if you are the manager")
+        if (response == true) {
+            $("#productsection").hide("slow");
+            $("#unavailablearea").hide("slow");
+            $("#tables").hide("slow");
+            $("#menuchoice").hide("slow");
+            $("#orderlist").hide("slow");
+            $("#orderlist1").hide("slow");
+            $("#orderlist2").hide("slow");
+            $("#orderlist3").hide("slow");
+            $("#orderlist4").hide("slow");
+            $("#bottompage").hide("slow");
+            $("#table1order").hide("slow");
+            $("#table2order").hide("slow");
+            $("#table3order").hide("slow");
+            $("#table4order").hide("slow");
+            $("#tableorder").hide("slow");
+            $("#managerview").show("slow");
+        }
+        else {
+            $("#tables").hide("slow");
+            $("#menuchoice").show("slow");
+            $("#orderlist").hide("slow");
+            $("#orderlist1").hide("slow");
+            $("#orderlist2").hide("slow");
+            $("#orderlist3").hide("slow");
+            $("#orderlist4").hide("slow");
+            $("#bottompage").show("slow");
+            $("#table1order").hide("slow");
+            $("#table2order").hide("slow");
+            $("#table3order").hide("slow");
+            $("#table4order").hide("slow");
+            $("#tableorder").hide("slow");
+            $("#managerview").hide("slow");
+            $("#productsection").hide("slow");
+            $("#unavailablearea").hide("slow");
+        }
     });
     
 });

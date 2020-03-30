@@ -7,6 +7,7 @@
     }
 }
 
+
 @font-face {
 	font-family: title1;
 	src: url('fonts/wave1.ttf');
@@ -32,6 +33,7 @@ body {
     background-color: #ffffff;
 }
 
+/* Design for line*/
 #line {
     position: absolute;
     left: 570px;
@@ -40,6 +42,7 @@ body {
     height: 10px;
     background:linear-gradient(to bottom, #1b0606 5%, #1b1105 100%);
 }
+/* Design for waiting-for-order box*/
 #leftbox {
     background-color: rgb(12, 5, 1);
     position: absolute;
@@ -51,7 +54,7 @@ body {
     color: #ffffff;
     font-family: sweet;
 }
-
+/* Design for waiting-to-pay box*/
 #rightbox {
     background-color: rgb(12, 5, 1);
     position: absolute;
@@ -64,10 +67,9 @@ body {
     font-family: sweet;
 }
 
+/* Design for "breaking the waves" box*/
 #topbox {
-    /*background-image: linear-gradient(rgb(18, 15, 59), rgb(245, 245, 245));*/
     background-image: linear-gradient(to bottom right, rgb(119, 73, 21), rgb(32, 17, 0));
-    /*border: 5px ridge rgb(230, 213, 213);*/
     position: absolute;
     left: 570px;
     top: 0px;
@@ -75,17 +77,18 @@ body {
     height: 100px;
 }
 
+/* Design for background menu*/
 #box {
     background-image: url('images/FlyingDutchman.jpg');
-    /*background-color: rgb(1, 1, 12);*/
-    /*border: 5px ridge rgb(230, 213, 213);*/
     opacity: 0.5;
     position: absolute;
     left: 570px;
     top: 100px;
     width: 650px;
     height: 790px;
-} 
+}
+
+/* Position for main title*/
 #pubtitle {
     font-family: impact;
     position: absolute;
@@ -93,18 +96,21 @@ body {
     left: 760px;
 }
 
+/* Position for alertbutton */
 #alert {
     position: absolute;
     top: 120px;
     left: 1100px;
 }
 
+/* Position for logoutbutton */
 #logout {
     position: absolute;
     top: 120px;
     left: 600px;
 }
 
+/* Position for main menu*/
 #mainmenu {
     position: absolute;
     top: 200px;
@@ -127,12 +133,14 @@ body {
     color: #ffffff;
 }
 
+/* Design for main title*/
 .titletext {
     font-family: title3;
     color: rgb(255, 255, 255);
     font-size: 60 px;
 }
 
+/* Design for back-button*/
 .backbutton {
     text-decoration: none;
     display: inline-block;
@@ -147,6 +155,7 @@ body {
     color: #ffffff;
 }
 
+/* Design for logout button */
 .logoutbutton {
 	box-shadow:inset 0px 1px 0px 0px #887e4f;
 	background:linear-gradient(to bottom, #a89526 5%, #9b8e1b 100%);
@@ -164,7 +173,7 @@ body {
 	text-shadow:0px 1px 0px #a08909;
 }
 
-
+/* Design for alertbutton*/
 .alertbutton {
 	box-shadow:inset 0px 1px 0px 0px #aa6862;
 	background:linear-gradient(to bottom, #a12d24 5%, #881f16 100%);
@@ -182,10 +191,10 @@ body {
 	text-shadow:0px 1px 0px #470803;
 }
 
+/* Design for menubuttons*/
 .menubutton {
     position: relative;
-    /*background-color: rgb(214, 214, 214);*/
-    /*border: 1px solid #000000;*/
+
     background-image: linear-gradient(to bottom right, rgb(26, 14, 10), rgb(104, 84, 75));
     font-size: 28px;
     color: rgb(255, 255, 255);
@@ -196,10 +205,11 @@ body {
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
-    /*border: 2px ridge #000000;*/
+    
     border: 1px solid rgb(214, 212, 212);
 }
-  
+ 
+/* Design for menubutton when clicked*/
 .menubutton:after {
 content: "";
 background: #f1f1f1;
@@ -213,6 +223,7 @@ opacity: 0;
 transition: all 0.8s
 }
 
+/* Design for menubutton after it has been clicked*/
 .menubutton:active:after {
 padding: 0;
 margin: 0;
