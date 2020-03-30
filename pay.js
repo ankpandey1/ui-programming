@@ -1,5 +1,11 @@
 
 
+function fetchTablePayment(){
+	var order = window.localStorage.getItem("table");
+	updatePay(parseInt(order))
+	window.localStorage.removeItem("table")
+
+}
 // Updates a tables payment status to "yes", which means they want to pay.
 function updatePay(tablenr) {
     var DB = wanttoPay;

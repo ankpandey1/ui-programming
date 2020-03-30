@@ -1,0 +1,257 @@
+/*
+Author: Lars Oestreicher
+
+The CSS for the bar layout. The CSS has been structured in a way that makes it easier to find
+the definitions that are overriding each other. The styles are sorted from the most generic definitions (Element)
+to the more specific definitions of groups of objects (Classes) ending with definitions for individual elements (Id).
+
+Obviously the colours and other more aesthetic properties of this bar layout still leaves a lot to desire. It is a
+challenge to make this display aesthetically pleasing. The best suggestion wins a price.
+*/
+body {
+    background-color: lightgoldenrodyellow;
+}
+
+/*
+We use a nice informal typeset for the pub ordering menu.
+*/
+div {
+    font-family: "Chalkboard SE";
+}
+
+/*
+Definition of a standard button of the interface.
+*/
+.button {
+    background-color: darkslategrey;
+    border: white solid 2px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    padding: 5px;
+    border-radius: 15px; /* Making the buttons corners more rounded. */
+}
+
+/*
+
+Defining the shapes and colours of the tables on the layout.
+
+Note that we can still change the size of a specific table, by giving it its own style
+with the ID as designator.
+
+*/
+.roundTable {
+    background-color: navajowhite;
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    border: solid 3px lightgreen;
+}
+
+.squareTable {
+    background-color: navajowhite;
+    height: 150px;
+    width: 150px;
+    border: groove 3px lightgray;
+}
+
+.oblongueTable{
+    background-color: navajowhite;
+    height: 150px;
+    width: 250px;
+    border-radius: 50px;
+    border: solid 3px blueviolet;
+}
+
+.order {
+    width: 250px;
+    min-height: 100px;
+    background-color: white;
+    border: black 2px double;
+    padding: 4px;
+}
+/*
+Table name, the position is defined relative to the table outline.
+*/
+.tname {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+/*
+The order sum for each table.
+*/
+.tsum {
+    position: absolute;
+    top:30px;
+    left: 40px;
+    color: darkslategrey;
+}
+
+/*
+The common definition of the menus.
+*/
+.menu {
+    position: absolute;
+    top: 145px;
+    right: 50px;
+    background-color: navajowhite;
+    width: 400px;
+    height: 500px;
+    border: ghostwhite groove 5px;
+    padding: 5px;
+}
+
+/*
+Individual menu styles =============================
+*/
+#menutabs {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 400px;
+}
+/*
+The menu tabs are actually list items in a refined horisontal list.
+*/
+ul#mtabs {
+    list-style: none;  /* Removes the bullet */
+}
+
+/*
+The menu tabs
+*/
+#mtabs li {
+    margin: auto;
+    float: left;
+    display: inline;  /* Makes the list horisontal */
+    padding: 4px;
+    border-radius: 10px 10px 0px 0px; /* We use rounded top corners to give the tab feeling */
+    background-color: black;
+    color: white;
+}
+/* End menu styles ==========================
+*/
+#display {
+    text-align: right;
+    font-size: larger;
+    background-color: darkgrey;
+    color: white;
+
+}
+
+#kassa {
+    position: absolute;
+    top: 700px;
+    right: 50px;
+}
+
+#menutop {
+    font-size: larger;
+}
+
+#allmenu {
+    background-color: lightsteelblue;
+}
+
+#menutabs {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 400px;
+}
+
+ul#mtabs {
+    list-style: none;  /* Removes the bullet */
+}
+
+#mtabs li {
+    margin: auto;
+    float: left;
+    display: inline;  /* Makes the list horisontal */
+    padding: 4px;
+    border-radius: 10px 10px 0px 0px;
+    background-color: black;
+    color: white;
+}
+
+#pubname {
+    width: 500px;
+    text-align: center;
+    font-size: xx-large;
+    background: deepskyblue;
+    color: navajowhite;
+    padding: 10px;
+    border: groove 5px ghostwhite;
+}
+
+/*
+We define the positions on the individual level, whereas the default sizes are defined in the general objects.
+Of course we can redefine the size of a table on the individual level too. See table four below. Note that in
+case we change the size of the table, we might need to adjust the position of the corresponding order.
+*/
+#t1 {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+#t2 {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+}
+
+#t3 {
+    position: absolute;
+    top: 700px;
+    left: 50px;
+}
+
+#t4 {
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    width: 400px;   /* Overriding the width. */
+}
+
+#t5 {
+    position: absolute;
+    top: 600px;
+    left: 350px;
+}
+
+#o1 {
+    position: absolute;
+    top: 175px;
+    left: 125px;
+}
+
+#o2 {
+    position: absolute;
+    top: 475px;
+    left: 125px;
+}
+
+#o3 {
+    position: absolute;
+    top: 775px;
+    left: 125px;
+}
+
+#o4 {
+    position: absolute;
+    top: 375px;
+    left: 525px;
+}
+
+#o5 {
+    position: absolute;
+    top: 675px;
+    left: 425px;
+}
+
+#ol1 {
+    list-style: none;
+}
+

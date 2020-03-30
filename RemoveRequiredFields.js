@@ -7,6 +7,8 @@ function removeFieldsAsRequired(){
 }
 
 function clearEverything(){
+    localStorage.setItem("table", "0");
+	fetchTablePayment();
 	localStorage.removeItem("order");
 	var myNode = document.getElementsByClassName('cart-items')[0];
 	while (myNode.firstChild) {

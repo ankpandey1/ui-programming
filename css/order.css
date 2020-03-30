@@ -1,0 +1,239 @@
+.itemContainer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.item {
+    margin: 15px;
+    flex-direction: column;
+    align-items: stretch;
+    width: 160px;
+	transition: all 0.2s linear;
+
+}
+
+.aName, 
+.aPrice {
+    text-align: center;
+}
+
+.aName {
+    height: 40px;
+}
+
+img {
+    border: 5px solid #ddd;
+    -webkit-transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease;
+}
+
+img:hover {
+    -webkit-box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+span {
+    cursor: pointer;
+}
+
+.number {
+    width: fit-content;
+}
+
+.minus,
+.plus {
+    width: 20px;
+    height: 20px;
+    background: #f2f2f2;
+    border-radius: 4px;
+    padding: 8px 5px 8px 5px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.quantity {
+    height: 34px;
+    width: 86px;
+    text-align: center;
+    font-size: 26px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.cart-column, .payment-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row, .payment-column {
+    display: flex;
+}
+
+.cart-item, .payment-item {
+    width: 45%;
+}
+
+.cart-price, .payment-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity, .payment-quantity {
+    width: 35%;
+}
+
+.cart-item-title, .payment-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image, .payment-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total, .payment-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title, .payment-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price, .payment-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #56CCF2;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #2D9CDB;
+}
+
+.expand {
+    display: none;
+    padding : 5px;
+}
+
+.review-order {
+	float:right;
+     line-height: auto;
+     width: auto;
+     font-size: 8pt;
+     font-family: tahoma;
+     margin-top: 1px;
+     margin-right: 2px;
+     position:absolute;
+     top:0;
+     right:0;
+ }
+ 
+ .pay {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: right; /* Float the buttons side by side */
+ }
+ 
+ 
+ .btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: right; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}

@@ -17,7 +17,7 @@ window.onclick = function(event) {
   }
 }
 });
-
+//function to close modal
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
 }

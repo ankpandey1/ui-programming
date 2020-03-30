@@ -1,6 +1,3 @@
-var JS = testJSON;
-var db = Object.keys(JS)
-
 //STores the order items to browser local storage and the DB
 function storeOrderDetails() {
   var cartItems = document.getElementsByClassName("cart-items");

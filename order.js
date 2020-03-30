@@ -4,6 +4,8 @@ var currentTable = 0;
 //var TB = Tables;
 var JS = testJSON;
 var DB = Products;
+var db = Object.keys(JS)
+
 
 //var editidstart = 1000;
 //var deleteidstart = 1100;
@@ -238,7 +240,6 @@ function addtoSum(item,tablenr) {
 // Function to remove the cost of an item for a table's total sum of orders.
 function removefromSum(item,tablenr) {
     var type = Object.keys(DB);
-    var db = Object.keys(JS)
     
     
     for (x = 0; x < Object.keys(DB).length; x++)

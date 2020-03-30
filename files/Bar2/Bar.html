@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<!---
+Version 2.1
+
+Author: Lars Oestreicher
+
+This is a template for the layout of a bar. There are no graphics involved in this example,
+everything is made with HTML and CSS + javaScript for the functionality.
+
+Required Library: jQuery (latest version).
+
+This example does not implement externalised strings!
+
+-->
+<head>
+    <meta charset="UTF-8">
+
+    <title>The Wolf and the Grasshopper</title>
+
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="Bar.js"></script>
+    <script type="text/javascript" src="drop.js"></script>
+    <script type="text/javascript" src="menuhandler.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Bar.css">
+
+</head>
+<body>
+
+
+<!-- The name of the pub. -->
+<div id="pubname">
+    The Wolf and the Grasshopper
+</div>
+
+
+<!-- The tables and the order tabs. -->
+
+<div class="roundTable" id="t1" onclick="">
+    <span class="tname">
+        Table 1:
+    </span>
+    <span class="tsum">
+        0 kr
+    </span>
+</div>
+
+<div class="squareTable" id="t2">
+    <span class="tname">
+        Table 2:
+    </span>
+    <span class="tsum">
+        0 kr.
+    </span>
+</div>
+
+<div class="oblongueTable" id="t3">
+    <span class="tname">
+        Table 3:
+    </span>
+    <span class="tsum">
+        0 kr
+    </span>
+</div>
+
+
+<div class="oblongueTable" id="t4">
+    <span class="tname">
+        Table 4:
+    </span>
+    <span class="tsum">
+        0 kr
+    </span>
+</div>
+
+
+<div class="roundTable" id="t5">
+    <span class="tname">
+        Table 5:
+    </span>
+    <span class="tsum">
+        0 kr
+    </span>
+</div>
+
+<!-- The orders are created after the tables, so that they will not be
+covered by the tables when they grow. -->
+
+<div class="order" id="o1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Table 1
+</div>
+
+<div class="order" id="o2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Table 2
+</div>
+
+<div class="order" id="o3" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Table 3
+</div>
+
+<div class="order" id="o4" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Bord 4
+</div>
+
+<div class="order" id="o5" ondrop="drop(event)" ondragover="allowDrop(event)">
+    Bord 5
+</div>
+
+
+<!-- Menutabs, used to select the correct menu below -->
+
+<div id="menutabs">
+    <ul id="mtabs">
+        <li id="allfood">
+            All
+        </li>
+        <li id="starters">
+            Starters
+        </li>
+        <li id="mains">
+            Main courses
+        </li>
+        <li id="desserts">
+            Desserts
+        </li>
+        <li id="drinks">
+            Beverages
+        </li>
+    </ul>
+</div>
+
+
+<!--
+The five menus are all placed on the same place on the screen. Placing them over each other
+gives the impression of switching between them. If we use the "slow" keyboard for the switching,
+the illusion will be even greater.
+-->
+
+<div class="menu" id="allmenu">
+</div>
+
+<div class="menu" id="starter">
+
+</div>
+
+<div class="menu" id="main">
+</div>
+
+<div class="menu" id="dessert">
+</div>
+
+<div class="menu" id="drink">
+</div>
+
+<!-- The CASHIER -->
+
+<div id="kassa">
+    <div id="display">
+        00.00
+    </div>
+    <div class="button" id="betala">
+        Pay
+    </div>
+    <div class="button" id="kvitto">Receipt</div>
+</div>
+
+
+</body>
+</html>
