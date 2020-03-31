@@ -8,11 +8,12 @@ var db = Object.keys(JS)
 var storage = false;
 
 // clear storage on restart
+/*
 if (!storage) {
     localStorage.clear()
     storage = true;
 }
-
+*/
 
 $(function () {
     //whenever new order is clicked it will display the available products
@@ -211,8 +212,8 @@ function fetchorderfromGuest(tablenr) {
     }
     
     
-    // clear storage after adding them to local database
-    localStorage.clear()
+    // Remove item from storage after adding them to local database
+    localStorage.removeItem("order");
 }
 
 // Function to make a new order and then call addtoSum to update the total cost for all orders of that table

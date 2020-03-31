@@ -1,10 +1,8 @@
 
 
-function fetchTablePayment(){
-	var order = window.localStorage.getItem("table");
-	updatePay(parseInt(order))
-	window.localStorage.removeItem("table")
-
+function fetchTablePayment(tablenr){
+	window.localStorage.setItem('table'+(tablenr+1)+'pay', JSON.stringify("yes"));
+	    
 }
 // Updates a tables payment status to "yes", which means they want to pay.
 function updatePay(tablenr) {
@@ -21,17 +19,13 @@ function updatePay(tablenr) {
 // Displays the tables that wants to pay and the tables total amount to be payed
 // This is done when "refresh" is clicked
 function viewPaylist() {
-    var DB = wanttoPay;
-    var JS = testJSON;
-    var table = Object.keys(DB)
-    var db = Object.keys(JS)
     document.getElementById("waitingpay").innerHTML = "";
-    
-    for (i = 0; i<DB[table].length; i++) {
-        if (DB[table][i].pay == "yes") {
-            
+    for (i = 0; i<4; i++) {
+        var pay = JSON.parse(localStorage.getItem('table'+(i+1)+'pay'));
+        console.log(pay)
+        if (pay == "yes") {
             var list = document.createElement("li");
-            var order = document.createTextNode("Table: " + (i + 1) + " wants to pay - " + (JS[db][i].sum) + " SEK");
+            var order = document.createTextNode("Table: " + (i + 1) + "_|_ " + (JS[db][i].sum) + " SEK");
             list.appendChild(order)
             document.getElementById("waitingpay").appendChild(list);
         }

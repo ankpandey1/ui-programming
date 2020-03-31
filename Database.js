@@ -591,3 +591,8 @@ var wanttoPay = {
     {"table": "4","pay": "no"}
     ]   
 }
+
+window.localStorage.setItem('table1pay', JSON.stringify("no"));
+window.localStorage.setItem('table2pay', JSON.stringify("no"));
+window.localStorage.setItem('table3pay', JSON.stringify("no"));
+window.localStorage.setItem('table4pay', JSON.stringify("no"));
