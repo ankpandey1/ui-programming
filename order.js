@@ -5,11 +5,14 @@ var currentTable = 0;
 var JS = testJSON;
 var DB = Products;
 var db = Object.keys(JS)
+var storage = false;
 
+// clear storage on restart
+if (!storage) {
+    localStorage.clear()
+    storage = true;
+}
 
-//var editidstart = 1000;
-//var deleteidstart = 1100;
-//var orderstart = 2000;
 
 $(function () {
     //whenever new order is clicked it will display the available products
@@ -143,6 +146,10 @@ function displayOrder(tablenr) {
     
     document.getElementById("orders"+(tablenr+1)).innerHTML = "";
     document.getElementById("sum"+(tablenr+1)).innerHTML = "";
+
+    if (tablenr == 0) {
+        fetchorderfromGuest(tablenr)
+    }
     
         for (j = 0; j < JS[item][tablenr].orders.length; j++,editidstart++,deleteidstart++, orderstart++) {
             var newOrder = document.createElement("div");
@@ -185,8 +192,33 @@ function displayOrder(tablenr) {
     
 };
 
+// Used to update the localdatabase with data fetched from the guestview
+function fetchorderfromGuest(tablenr) {
+    
+    // add new orderlist and update sum
+    var order = window.localStorage.getItem("order"); 
+    var orderObject = JSON.parse(order);
+   
+    if (orderObject !== null) {
+        for(i=0;i<orderObject.length;i++){
+            console.log(orderObject[i])
+            for(j=0;j<orderObject[i].quantity;j++){
+                var text = orderObject[i].name
+                JS[db][tablenr].orders.push(text); 
+                addtoSum(text,tablenr)
+            }
+        }
+    }
+    
+    
+    // clear storage after adding them to local database
+    localStorage.clear()
+}
+
 // Function to make a new order and then call addtoSum to update the total cost for all orders of that table
+// An item will be added to the database by the quantity x specicied on the order page | x | + | - |.
 function makenewOrder(tablenr) {
+    
 
     var db = Object.keys(JS)
 
@@ -251,9 +283,9 @@ function removefromSum(item,tablenr) {
                 // add price of added item to table sum
                 var cost = parseInt(DB[type][z].priceinclvat)
                 var currentsum = parseInt(JS[db][tablenr].sum)
-                console.log(cost)
+                
                 JS[db][tablenr].sum = currentsum - cost;
-                console.log(JS[db][tablenr].sum)
+               
             }
         }
     }
