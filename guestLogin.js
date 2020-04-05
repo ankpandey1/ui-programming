@@ -1,8 +1,10 @@
+//No authentication required
 function proceedWithoutLogin(){
     setCookie('session','orderPage.html',2);
 	window.location.assign("orderPage.html");
 }
 
+//Validates login for VIP customer
 function validateLogin(){
 	username=document.getElementById("username").value;
     password=document.getElementById("password").value;
@@ -25,19 +27,22 @@ function validateLogin(){
         return false;
     }
 }
+
+//Logout for VIP customers
 function logout(){
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     document.cookie = "session=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     $('body').load('loginForm.html');
 }
 
+//Sets cookie for the given session
 function setCookie(cname, value, hours){
     var d = new Date();
     d.setTime(d.getTime() + (hours*60*60*1000));                
     document.cookie=cname+'='+value+';Expires='+d.toUTCString()+';';
 }
 
-
+//Fetches cookie for the given session
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);

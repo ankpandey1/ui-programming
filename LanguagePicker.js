@@ -13,7 +13,8 @@ $(document).ready(function(){
 	$(a).find("#select").val(window.sessionStorage.getItem("lang"));
 	}
 });
-	
+
+//Takes the key as parameter and returns mapped value from the respective js object	
 function translate(key){
 	console.log(mapping_sv);
 	var a=document.getElementsByClassName("language");
@@ -26,11 +27,15 @@ function translate(key){
 	else if(lang==="swedish"){
 		document.getElementById(key).innerText=mapping_sv[0][key];
 		return mapping_sv[0][key];
-	}	
+	}
+	else{
+		document.getElementById(key).innerText=mapping_en[0][key];
+		return mapping_en[0][key];
+	}		
 	
 };
 
-   
+	//Changes Language and reloads the page
 	function changeLanguage(selectedLanguage){
 		window.sessionStorage.setItem("lang",selectedLanguage);
 		window.location.reload();		

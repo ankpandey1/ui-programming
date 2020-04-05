@@ -29,9 +29,7 @@ function openModal() {
 var order = window.localStorage.getItem("order");
 var orderObject = JSON.parse(order);
 
-//var cartRow = document.createElement('div')
 
-//cartRow.classList.add('cart-row')
 if(orderObject===null){
 	window.alert("Please place an order first!!");
 	
@@ -66,7 +64,7 @@ modalContent.append(undoButtonDiv)
 }
 }
 
-
+//Clear local storage when user cancels orders
 function clearLocalStorage(){
 	var answer = window.confirm("Are you sure you want to cancel the order?")
 	if(answer){

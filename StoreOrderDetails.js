@@ -13,6 +13,7 @@ function storeOrderDetails() {
   }
 	storeDetailsinDB();
 
+  //Appends the order details to browser's local storage
   function appendToStorage(name, data) {
     var old = localStorage.getItem(name);
     if (old) {
@@ -24,6 +25,7 @@ function storeOrderDetails() {
   }
 }
 
+//Stores details in DB for bartender to fetch
 function storeDetailsinDB(){
 	var order = window.localStorage.getItem("order");
 	var total = 0;

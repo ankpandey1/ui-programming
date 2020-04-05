@@ -1,36 +1,30 @@
 var beverageName = "";
 var price = "";
+//
 function startDragging(ev) {
 	beverageName = ev.getElementsByClassName('aName')[0].innerText;
 	price = ev.getElementsByClassName('aPrice')[0].innerText
 	price = parseInt(price.substring(0, price.length - 4))
 	beverageId = beverageName.replace(/ /gi, '-');
 }
-
+        
+// We want to prevent the standard handling and do it ourselves. This is the same as in the previous version.
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
+//Passing the target's id to the make_drag function
 function drop(ev) {
-	console.log(ev.target.id);
     make_drag(ev.target.id);
 }
 
+//Adds the dragged element to the cart
 function make_drag(to) {
-
-	console.log(document.getElementById(beverageId))
 	if(document.getElementById(beverageId) === null){
 		
 		    var cartRow = document.createElement('div')
 			cartRow.classList.add('cart-row')
 			var cartItems = document.getElementsByClassName('cart-items')[0]
-//			var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-	//		for (var i = 0; i < cartItemNames.length; i++) {
-		//		if (cartItemNames[i].innerText == title) {
-			//		alert('This item is already added to the cart')
-				//	return
-				//}
-			//}
 			getTotalPrice();
 
 			var cartRowContents = `
@@ -50,48 +44,37 @@ function make_drag(to) {
 			cartRow.getElementsByClassName('plus')[0].addEventListener('onclick', quantityChangedByButton)
 
 	}else{
-            var $input = $(this).parent().find('input');
-            var count = parseInt($input.val()) + 1;
-            count = count > 10 ? 10 : count;
-            $input.val(count);
-            $input.change();
-			document.activeElement.value = count
+            var count = parseInt(event.target.parentElement.parentElement.getElementsByClassName('cart-quantity-input')[0].value);
+            count = count > 10 ? 10 : count + 1;
+ //           $input.val(count);
+   //         $input.change();
+			event.target.parentElement.parentElement.getElementsByClassName('cart-quantity-input')[0].value = count
 			
-//		count = parseInt($(this).getElementsByClassName('cart-quantity-input')[0].value)
-//		count = parseInt(document.getElementById(beverageId).parentElement.parentElement.getElementsByClassName('cart-quantity cart-column')[0].getElementsByClassName('cart-quantity-input')[0].value)
-//		count = count + 1;
-//		$(this).parent.getElementsByClassName('cart-quantity-input')[0].value = count;
-	//	document.getElementById(beverageId).parentElement.parentElement.getElementsByClassName('cart-quantity cart-column')[0].getElementsByClassName('cart-quantity-input')[0].value = count;
 		getTotalPrice();
 
 	}
-	//add the script for controlling the number input (add and subtract) for each item
+	//Changes quantity by +/- button
    $('.cart-items').ready(function() {
 
         $('.minus').click(function() {
-            var $input = $(this).parent().find('input');
-            var count = parseInt($input.val()) - 1;
-            count = count < 1 ? 1 : count;
-            $input.val(count);
-            $input.change();
+            var count = parseInt(event.target.parentElement.getElementsByClassName('cart-quantity-input')[0].value);
+            count = count < 1 ? 1 : count-1;
+			event.target.parentElement.getElementsByClassName('cart-quantity-input')[0].value = count;
 			updateCartTotal()
             return false;
         });
         $('.plus').click(function() {
-            var $input = $(this).parent().find('input');
-            var count = parseInt($input.val()) + 1;
-            count = count > 10 ? 10 : count;
-            $input.val(count);
-            $input.change();
+            var count = parseInt(event.target.parentElement.getElementsByClassName('cart-quantity-input')[0].value);
+            count = count > 10 ? 10 : count+1;
+			event.target.parentElement.getElementsByClassName('cart-quantity-input')[0].value = count;
 			updateCartTotal()
             return false;
         });
     });
 	
 		    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
-	//	$('cart-items').append('
-	//}
 }
+	//Computes total cart price
 	function getTotalPrice(){
 	let total = parseInt(document.getElementsByClassName("cart-total-price-value")[0].innerText)
 	if(isNaN(total)){
@@ -101,12 +84,7 @@ function make_drag(to) {
 	document.getElementsByClassName("cart-total-price-value")[0].innerText = total;
 	}
 	
-	function placeOrder(){
-		var cartItems = document.getElementsByClassName('cart-items')[0]
-		
-		
-	}
-	
+	//Used to change quantity by input value
 	function quantityChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
@@ -119,6 +97,7 @@ function make_drag(to) {
 function quantityChangedByButton(){
 }
 
+//Updates Cart's total and displays it
 function updateCartTotal() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
@@ -135,13 +114,10 @@ function updateCartTotal() {
     document.getElementsByClassName('cart-total-price-value')[0].innerText = total
 }
 
-function placeOrderAlert(){
-
-
-	
-}
-
+//Trigerred when place order button is clicked
+//Removes elements from the cart
 function purchaseClicked() {
+	//Stores Data in the broswer storage before clearing
 	storeOrderDetails();
 	var answer = window.confirm("Do you want to place the order?")
     

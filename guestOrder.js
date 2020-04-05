@@ -112,6 +112,7 @@ function listProductByType(){
 
 });
 
+//Fetches image's path for placeholders
 function getImagePath(type){
 	var imagePath = "";
 	switch(type) {
